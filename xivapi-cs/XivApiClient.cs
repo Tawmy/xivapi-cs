@@ -32,7 +32,7 @@ namespace xivapi_cs
         }
 
         public async Task<CharacterProfile> CharacterProfile(int id, bool fetchFreeCompany = false,
-            bool fetchFreeCompanyMembers = false)
+            bool fetchFreeCompanyMembers = false, bool fetchMinionsMounts = false)
         {
             var req = new RestRequest($"character/{id}");
 
@@ -40,6 +40,7 @@ namespace xivapi_cs
 
             if (fetchFreeCompany) fetch.Add("FC");
             if (fetchFreeCompanyMembers) fetch.Add("FCM");
+            if (fetchMinionsMounts) fetch.Add("MIMO");
 
             if (fetch.Count > 0) req.AddParameter("data", string.Join(",", fetch));
 
