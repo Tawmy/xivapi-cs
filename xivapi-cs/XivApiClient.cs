@@ -1,5 +1,3 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
@@ -10,7 +8,7 @@ namespace xivapi_cs
     public class XivApiClient
     {
         private readonly RestClient _client;
-        
+
         public XivApiClient()
         {
             _client = new RestClient("https://xivapi.com/");
