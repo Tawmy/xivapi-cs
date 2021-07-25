@@ -31,13 +31,15 @@ namespace xivapi_cs
             return await CharacterSearch($"{firstName} {lastName}", server).ConfigureAwait(false);
         }
 
-        public async Task<CharacterProfile> CharacterProfile(int id, bool fetchFreeCompany = false)
+        public async Task<CharacterProfile> CharacterProfile(int id, bool fetchFreeCompany = false,
+            bool fetchFreeCompanyMembers = false)
         {
             var req = new RestRequest($"character/{id}");
 
             var fetch = new List<string>();
 
             if (fetchFreeCompany) fetch.Add("FC");
+            if (fetchFreeCompanyMembers) fetch.Add("FCM");
 
             if (fetch.Count > 0) req.AddParameter("data", string.Join(",", fetch));
 
