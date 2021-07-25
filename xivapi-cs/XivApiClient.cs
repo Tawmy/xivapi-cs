@@ -15,6 +15,20 @@ namespace xivapi_cs
             _client.UseSystemTextJson();
         }
 
+        public async Task<CharacterSearch> CharacterSearch(string name, string server)
+        {
+            var req = new RestRequest($"character/search");
+            req.AddParameter("name", name);
+            req.AddParameter("server", server);
+            var resp = await _client.ExecuteGetAsync<CharacterSearch>(req);
+            return resp.Data;
+        }
+        
+        public async Task<CharacterSearch> CharacterSearch(string firstName, string lastName, string server)
+        {
+            return await CharacterSearch($"{firstName} {lastName}", server);
+        }
+
         public async Task<CharacterProfile> CharacterProfile(int id)
         {
             var req = new RestRequest($"character/{id}");
