@@ -31,14 +31,18 @@ namespace xivapi_cs
             return await CharacterSearch($"{firstName} {lastName}", server).ConfigureAwait(false);
         }
 
-        public async Task<CharacterProfile> CharacterProfile(int id, bool fetchAchievements = false,
+        public async Task<CharacterProfile> CharacterProfile(int id,
+            bool fetchAchievements = false,
+            bool fetchFriends = false,
             bool fetchFreeCompany = false,
-            bool fetchFreeCompanyMembers = false, bool fetchMinionsMounts = false)
+            bool fetchFreeCompanyMembers = false,
+            bool fetchMinionsMounts = false)
         {
             var req = new RestRequest($"character/{id}");
 
             var fetch = new List<string>();
             if (fetchAchievements) fetch.Add("AC");
+            if (fetchFriends) fetch.Add("FR");
             if (fetchFreeCompany) fetch.Add("FC");
             if (fetchFreeCompanyMembers) fetch.Add("FCM");
             if (fetchMinionsMounts) fetch.Add("MIMO");
