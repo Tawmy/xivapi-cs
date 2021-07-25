@@ -12,7 +12,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterSearch("Alyx", "Bergen", "Phoenix");
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task SearchAlyxDirect()
         {
@@ -20,7 +20,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterSearch("Alyx Bergen", "Phoenix");
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task SearchLisa()
         {
@@ -28,7 +28,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterSearch("Lisa", "Bergen", "Phoenix");
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task SearchHalvar()
         {
@@ -36,7 +36,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterSearch("Halvar", "Ragnar", "Phoenix");
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task SearchGibberish()
         {
@@ -44,7 +44,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterSearch("fasklhflask", "akshflksaf", "faslkfhka");
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task SearchAlyxWrongServer()
         {
@@ -52,7 +52,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterSearch("Alyx", "Bergen", "Zodiark");
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task SearchHena()
         {

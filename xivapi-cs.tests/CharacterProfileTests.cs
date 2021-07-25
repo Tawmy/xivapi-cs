@@ -44,7 +44,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfile(28835226);
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task GetAlavel()
         {
@@ -52,7 +52,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfile(30410250);
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task GetEbih()
         {
@@ -60,7 +60,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfile(28025341);
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task GetGenryu()
         {
@@ -68,7 +68,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfile(3435267);
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task GetKukuri()
         {
@@ -76,7 +76,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfile(13951694);
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task GetOne()
         {
@@ -84,7 +84,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfile(28834908);
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task GetRhayn()
         {

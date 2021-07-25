@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
@@ -17,23 +19,30 @@ namespace xivapi_cs
 
         public async Task<CharacterSearch> CharacterSearch(string name, string server)
         {
-            var req = new RestRequest($"character/search");
+            var req = new RestRequest("character/search");
             req.AddParameter("name", name);
             req.AddParameter("server", server);
             var resp = await _client.ExecuteGetAsync<CharacterSearch>(req);
             return resp.Data;
         }
-        
+
         public async Task<CharacterSearch> CharacterSearch(string firstName, string lastName, string server)
         {
             return await CharacterSearch($"{firstName} {lastName}", server).ConfigureAwait(false);
         }
 
-        public async Task<CharacterProfile> CharacterProfile(int id)
+        public async Task<CharacterProfile> CharacterProfile(int id, bool fetchFreeCompany = false)
         {
             var req = new RestRequest($"character/{id}");
-            var resp = await _client.ExecuteGetAsync<CharacterProfile>(req);
-            return resp.Data;
+
+            var fetch = new List<string>();
+
+            if (fetchFreeCompany) fetch.Add("FC");
+
+            if (fetch.Count > 0) req.AddParameter("data", string.Join(",", fetch));
+
+            var resp = await _client.ExecuteGetAsync(req);
+            return JsonSerializer.Deserialize<CharacterProfile>(resp.Content);
         }
     }
 }
