@@ -26,7 +26,7 @@ namespace xivapi_cs
         
         public async Task<CharacterSearch> CharacterSearch(string firstName, string lastName, string server)
         {
-            return await CharacterSearch($"{firstName} {lastName}", server);
+            return await CharacterSearch($"{firstName} {lastName}", server).ConfigureAwait(false);
         }
 
         public async Task<CharacterProfile> CharacterProfile(int id)

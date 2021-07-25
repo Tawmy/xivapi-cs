@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xivapi-cs", "xivapi-cs\xivapi-cs.csproj", "{198AA592-1121-4D7A-86B1-99BDDD96232B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xivapi-cs.tests", "xivapi-cs.tests\xivapi-cs.tests.csproj", "{032A7DE1-BBD6-4003-B185-76F82BA4FF91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xivapi-cs.tests", "xivapi-cs.tests\xivapi-cs.tests.csproj", "{4DF774F6-84B4-4074-9114-62F8BEFE3CF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{198AA592-1121-4D7A-86B1-99BDDD96232B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{198AA592-1121-4D7A-86B1-99BDDD96232B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{198AA592-1121-4D7A-86B1-99BDDD96232B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{032A7DE1-BBD6-4003-B185-76F82BA4FF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{032A7DE1-BBD6-4003-B185-76F82BA4FF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{032A7DE1-BBD6-4003-B185-76F82BA4FF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{032A7DE1-BBD6-4003-B185-76F82BA4FF91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF774F6-84B4-4074-9114-62F8BEFE3CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF774F6-84B4-4074-9114-62F8BEFE3CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF774F6-84B4-4074-9114-62F8BEFE3CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF774F6-84B4-4074-9114-62F8BEFE3CF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
