@@ -3,7 +3,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
-using xivapi_cs.Models;
+using xivapi_cs.Models.CharacterProfile;
+using xivapi_cs.Models.CharacterSearch;
 
 namespace xivapi_cs
 {

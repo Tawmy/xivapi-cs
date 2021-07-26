@@ -2,7 +2,5 @@
 	<s:String x:Key="/Default/CodeInspection/Highlighting/SweaWarningsMode/@EntryValue">ShowAndRun</s:String>
 	
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=db71b593_002D699f_002D4802_002D9036_002D7a4a0a7f1a0f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetAlyx #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="/Users/tawmy/Git/xivapi-cs/xivapi-cs.tests" Presentation="&amp;lt;xivapi-cs.tests&amp;gt;" /&gt;
-&lt;/SessionState&gt;</s:String>
+	
 	</wpf:ResourceDictionary>
