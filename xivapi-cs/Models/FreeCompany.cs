@@ -1,4 +1,6 @@
-namespace xivapi_cs.Models.CharacterProfile
+using xivapi_cs.Models.CharacterProfile;
+
+namespace xivapi_cs.Models
 {
     public class FreeCompany
     {
@@ -22,7 +24,7 @@ namespace xivapi_cs.Models.CharacterProfile
         public Reputation[] Reputation { get; set; }
         public Seeking[] Seeking { get; set; }
         public string Server { get; set; }
-        public string Slogal { get; set; }
+        public string Slogan { get; set; }
         public string Tag { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
 using xivapi_cs.Models.CharacterProfile;
 using xivapi_cs.Models.CharacterSearch;
+using xivapi_cs.Models.FreeCompanyProfile;
 using xivapi_cs.Models.FreeCompanySearch;
 
 namespace xivapi_cs
@@ -30,6 +31,18 @@ namespace xivapi_cs
 
             var resp = await _client.ExecuteGetAsync<FreeCompanySearch>(req);
             return resp.Data;
+        }
+
+        public async Task<FreeCompanyProfile> FreeCompanyProfile(string id, bool fetchMembers = false)
+        {
+            var req = new RestRequest($"freecompany/{id}");
+
+            var fetch = new List<string>();
+            if (fetchMembers) fetch.Add("FCM");
+            if (fetch.Count > 0) req.AddParameter("data", string.Join(",", fetch));
+
+            var resp = await _client.ExecuteGetAsync(req);
+            return JsonSerializer.Deserialize<FreeCompanyProfile>(resp.Content);
         }
 
         #endregion
