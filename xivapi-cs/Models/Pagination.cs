@@ -1,6 +1,6 @@
-namespace xivapi_cs.Models.CharacterSearch
+namespace xivapi_cs.Models
 {
-    public class CharacterSearchPagination
+    public class Pagination
     {
         public int Page { get; set; }
         public int? PageNext { get; set; }

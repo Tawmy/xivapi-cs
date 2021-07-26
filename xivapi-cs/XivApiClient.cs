@@ -5,6 +5,7 @@ using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
 using xivapi_cs.Models.CharacterProfile;
 using xivapi_cs.Models.CharacterSearch;
+using xivapi_cs.Models.FreeCompanySearch;
 
 namespace xivapi_cs
 {
@@ -18,13 +19,30 @@ namespace xivapi_cs
             _client.UseSystemTextJson();
         }
 
+        #region Free Company
+
+        public async Task<FreeCompanySearch> FreeCompanySearch(string name, string server = null, int? page = null)
+        {
+            var req = new RestRequest("freecompany/search");
+            req.AddParameter("name", name);
+            if (server != null) req.AddParameter("server", server);
+            if (page != null) req.AddParameter("page", page);
+
+            var resp = await _client.ExecuteGetAsync<FreeCompanySearch>(req);
+            return resp.Data;
+        }
+
+        #endregion
+
+        #region Character
+
         public async Task<CharacterSearch> CharacterSearch(string name, string server = null, int? page = null)
         {
             var req = new RestRequest("character/search");
             req.AddParameter("name", name);
             if (server != null) req.AddParameter("server", server);
             if (page != null) req.AddParameter("page", page);
-                
+
             var resp = await _client.ExecuteGetAsync<CharacterSearch>(req);
             return resp.Data;
         }
@@ -72,5 +90,7 @@ namespace xivapi_cs
             var resp = await _client.ExecuteGetAsync(req);
             return JsonSerializer.Deserialize<CharacterProfileExtended>(resp.Content);
         }
+
+        #endregion
     }
 }

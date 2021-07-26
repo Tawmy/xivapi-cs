@@ -47,7 +47,7 @@ namespace xivapi_cs.tests
             var result = await client.CharacterSearch("Alyx Bergen", "Zodiark");
             Assert.IsNotNull(result);
         }
-        
+
         [Test]
         public async Task SearchAlyxNoServer()
         {
@@ -65,7 +65,7 @@ namespace xivapi_cs.tests
             Assert.IsNotNull(result);
             Assert.Greater(result.Results.Length, 0);
         }
-        
+
         [Test]
         public async Task SearchOdin()
         {
@@ -74,7 +74,7 @@ namespace xivapi_cs.tests
             Assert.IsNotNull(result);
             Assert.Greater(result.Results.Length, 0);
         }
-        
+
         [Test]
         public async Task SearchOdinAndComparePages()
         {
