@@ -51,5 +51,28 @@ namespace xivapi_cs
             var resp = await _client.ExecuteGetAsync(req);
             return JsonSerializer.Deserialize<CharacterProfile>(resp.Content);
         }
+
+        public async Task<CharacterProfileExtended> CharacterProfileExtended(int id,
+            bool fetchAchievements = false,
+            bool fetchFriends = false,
+            bool fetchFreeCompany = false,
+            bool fetchFreeCompanyMembers = false,
+            bool fetchMinionsMounts = false)
+        {
+            var req = new RestRequest($"character/{id}");
+
+            var fetch = new List<string>();
+            if (fetchAchievements) fetch.Add("AC");
+            if (fetchFriends) fetch.Add("FR");
+            if (fetchFreeCompany) fetch.Add("FC");
+            if (fetchFreeCompanyMembers) fetch.Add("FCM");
+            if (fetchMinionsMounts) fetch.Add("MIMO");
+            if (fetch.Count > 0) req.AddParameter("data", string.Join(",", fetch));
+
+            req.AddParameter("extended", 1);
+
+            var resp = await _client.ExecuteGetAsync(req);
+            return JsonSerializer.Deserialize<CharacterProfileExtended>(resp.Content);
+        }
     }
 }

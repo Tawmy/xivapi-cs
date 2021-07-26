@@ -1,18 +1,8 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/Highlighting/SweaWarningsMode/@EntryValue">ShowAndRun</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=65944cb0_002D9c34_002D4661_002Db007_002D507636feddba/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAlyx #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::4DF774F6-84B4-4074-9114-62F8BEFE3CF8::net5.0::xivapi_cs.tests.CharacterProfileExtendedTests.GetAlyx&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a69c1f5e_002D73a4_002D4844_002D8aca_002D029d2dc53445/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAlyx" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Project Location="/Users/tawmy/Git/xivapi-cs/xivapi-cs.tests" Presentation="&amp;lt;xivapi-cs.tests&amp;gt;" /&gt;
-&lt;/SessionState&gt;</s:String>
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=db71b593_002D699f_002D4802_002D9036_002D7a4a0a7f1a0f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetAlyx #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Project Location="/Users/tawmy/Git/xivapi-cs/xivapi-cs.tests" Presentation="&amp;lt;xivapi-cs.tests&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e05b7f79_002D8a5c_002D4529_002D9864_002D7772e00c1308/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAlyx #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::4DF774F6-84B4-4074-9114-62F8BEFE3CF8::net5.0::xivapi_cs.tests.CharacterProfileExtendedTests.GetAlyx&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	</wpf:ResourceDictionary>
