@@ -9,39 +9,34 @@ namespace xivapi_cs.tests
         public async Task SearchAlyx()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterSearch("Alyx", "Bergen", "Phoenix");
-            Assert.IsNotNull(result);
-        }
-
-        [Test]
-        public async Task SearchAlyxDirect()
-        {
-            var client = new XivApiClient();
             var result = await client.CharacterSearch("Alyx Bergen", "Phoenix");
             Assert.IsNotNull(result);
+            Assert.Greater(result.Results.Length, 0);
         }
 
         [Test]
         public async Task SearchLisa()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterSearch("Lisa", "Bergen", "Phoenix");
+            var result = await client.CharacterSearch("Lisa Bergen", "Phoenix");
             Assert.IsNotNull(result);
+            Assert.Greater(result.Results.Length, 0);
         }
 
         [Test]
         public async Task SearchHalvar()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterSearch("Halvar", "Ragnar", "Phoenix");
+            var result = await client.CharacterSearch("Halvar Ragnar", "Phoenix");
             Assert.IsNotNull(result);
+            Assert.Greater(result.Results.Length, 0);
         }
 
         [Test]
         public async Task SearchGibberish()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterSearch("fasklhflask", "akshflksaf", "faslkfhka");
+            var result = await client.CharacterSearch("fasklhflaskakshflksaf", "faslkfhka");
             Assert.IsNotNull(result);
         }
 
@@ -49,16 +44,48 @@ namespace xivapi_cs.tests
         public async Task SearchAlyxWrongServer()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterSearch("Alyx", "Bergen", "Zodiark");
+            var result = await client.CharacterSearch("Alyx Bergen", "Zodiark");
             Assert.IsNotNull(result);
+        }
+        
+        [Test]
+        public async Task SearchAlyxNoServer()
+        {
+            var client = new XivApiClient();
+            var result = await client.CharacterSearch("Alyx Bergen");
+            Assert.IsNotNull(result);
+            Assert.Greater(result.Results.Length, 0);
         }
 
         [Test]
         public async Task SearchHena()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterSearch("Hena", "Wilbert", "Phoenix");
+            var result = await client.CharacterSearch("Hena Wilbert", "Phoenix");
             Assert.IsNotNull(result);
+            Assert.Greater(result.Results.Length, 0);
+        }
+        
+        [Test]
+        public async Task SearchOdin()
+        {
+            var client = new XivApiClient();
+            var result = await client.CharacterSearch("Odin");
+            Assert.IsNotNull(result);
+            Assert.Greater(result.Results.Length, 0);
+        }
+        
+        [Test]
+        public async Task SearchOdinAndComparePages()
+        {
+            var client = new XivApiClient();
+            var result = await client.CharacterSearch("Odin");
+            var result2 = await client.CharacterSearch("Odin", page: 2);
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result2);
+            Assert.Greater(result.Results.Length, 0);
+            Assert.Greater(result2.Results.Length, 0);
+            Assert.AreNotEqual(result.Results, result2.Results);
         }
     }
 }

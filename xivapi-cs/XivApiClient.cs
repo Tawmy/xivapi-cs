@@ -18,18 +18,15 @@ namespace xivapi_cs
             _client.UseSystemTextJson();
         }
 
-        public async Task<CharacterSearch> CharacterSearch(string name, string server)
+        public async Task<CharacterSearch> CharacterSearch(string name, string server = null, int? page = null)
         {
             var req = new RestRequest("character/search");
             req.AddParameter("name", name);
-            req.AddParameter("server", server);
+            if (server != null) req.AddParameter("server", server);
+            if (page != null) req.AddParameter("page", page);
+                
             var resp = await _client.ExecuteGetAsync<CharacterSearch>(req);
             return resp.Data;
-        }
-
-        public async Task<CharacterSearch> CharacterSearch(string firstName, string lastName, string server)
-        {
-            return await CharacterSearch($"{firstName} {lastName}", server).ConfigureAwait(false);
         }
 
         public async Task<CharacterProfile> CharacterProfile(int id,
