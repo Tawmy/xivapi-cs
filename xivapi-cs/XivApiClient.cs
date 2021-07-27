@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
@@ -7,6 +8,7 @@ using xivapi_cs.Models.CharacterProfile;
 using xivapi_cs.Models.CharacterSearch;
 using xivapi_cs.Models.FreeCompanyProfile;
 using xivapi_cs.Models.FreeCompanySearch;
+using xivapi_cs.Models.LinkshellSearch;
 
 namespace xivapi_cs
 {
@@ -19,6 +21,27 @@ namespace xivapi_cs
             _client = new RestClient("https://xivapi.com/");
             _client.UseSystemTextJson();
         }
+
+        #region Linkshell
+
+        public async Task<LinkshellSearch> LinkshellSearch(string name, string server = null, int? page = null)
+        {
+            var req = new RestRequest("linkshell/search");
+            req.AddParameter("name", name);
+            if (server != null)
+            {
+                var servers = (await _client.ExecuteGetAsync<string[]>(new RestRequest("servers"))).Data;
+                if (servers.Contains(server)) req.AddParameter("server", server);
+                else return null;
+            }
+
+            if (page != null) req.AddParameter("page", page);
+
+            var resp = await _client.ExecuteGetAsync(req);
+            return JsonSerializer.Deserialize<LinkshellSearch>(resp.Content);
+        }
+
+        #endregion
 
         #region Free Company
 
