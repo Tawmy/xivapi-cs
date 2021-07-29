@@ -24,9 +24,20 @@ namespace xivapi_cs
 
         #region Linkshell
 
-        public async Task<LinkshellSearch> LinkshellSearch(string name, string server = null, int? page = null)
+        public async Task<LinkshellSearch> LinkshellSearchRegular(string name, string server = null, int? page = null)
         {
-            var req = new RestRequest("linkshell/search");
+            return await LinkshellSearch("linkshell/search", name, server, page);
+        }
+
+        public async Task<LinkshellSearch> LinkshellSearchCrossworld(string name, string server = null,
+            bool crossworld = false, int? page = null)
+        {
+            return await LinkshellSearch("linkshell/crossworld/search", name, server, page);
+        }
+
+        private async Task<LinkshellSearch> LinkshellSearch(string reqStr, string name, string server, int? page)
+        {
+            var req = new RestRequest(reqStr);
             req.AddParameter("name", name);
             if (server != null)
             {

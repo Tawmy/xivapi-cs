@@ -9,7 +9,7 @@ namespace xivapi_cs.tests
         public async Task SearchOdin()
         {
             var client = new XivApiClient();
-            var result = await client.LinkshellSearch("Odin");
+            var result = await client.LinkshellSearchRegular("Odin");
             Assert.IsNotNull(result);
             Assert.Greater(result.Results.Length, 0);
         }
@@ -18,8 +18,21 @@ namespace xivapi_cs.tests
         public async Task SearchOdinAndComparePages()
         {
             var client = new XivApiClient();
-            var result = await client.LinkshellSearch("Odin");
-            var result2 = await client.LinkshellSearch("Odin", page: 2);
+            var result = await client.LinkshellSearchRegular("Odin");
+            var result2 = await client.LinkshellSearchRegular("Odin", page: 2);
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result2);
+            Assert.Greater(result.Results.Length, 0);
+            Assert.Greater(result2.Results.Length, 0);
+            Assert.AreNotEqual(result.Results, result2.Results);
+        }
+
+        [Test]
+        public async Task SearchOdinCrossworldAndComparePages()
+        {
+            var client = new XivApiClient();
+            var result = await client.LinkshellSearchCrossworld("Odin");
+            var result2 = await client.LinkshellSearchCrossworld("Odin", page: 2);
             Assert.IsNotNull(result);
             Assert.IsNotNull(result2);
             Assert.Greater(result.Results.Length, 0);
@@ -31,7 +44,7 @@ namespace xivapi_cs.tests
         public async Task SearchOdinPhoenix()
         {
             var client = new XivApiClient();
-            var result = await client.LinkshellSearch("Odin", "Phoenix");
+            var result = await client.LinkshellSearchRegular("Odin", "Phoenix");
             Assert.IsNotNull(result);
             Assert.Greater(result.Results.Length, 0);
         }
@@ -40,7 +53,7 @@ namespace xivapi_cs.tests
         public async Task SearchOdinGibberishServer()
         {
             var client = new XivApiClient();
-            var result = await client.LinkshellSearch("Odin", "fhaskjlhfajkshf");
+            var result = await client.LinkshellSearchRegular("Odin", "fhaskjlhfajkshf");
             Assert.IsNull(result);
         }
     }
