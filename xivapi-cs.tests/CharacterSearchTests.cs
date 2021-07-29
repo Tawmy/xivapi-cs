@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
@@ -33,11 +34,11 @@ namespace xivapi_cs.tests
         }
 
         [Test]
-        public async Task SearchGibberish()
+        public void SearchGibberish()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterSearch("fasklhflaskakshflksaf", "faslkfhka");
-            Assert.IsNotNull(result);
+            Assert.ThrowsAsync<ArgumentException>(async () => 
+                await client.CharacterSearch("fasklhflaskakshflksaf", "faslkfhka"));
         }
 
         [Test]

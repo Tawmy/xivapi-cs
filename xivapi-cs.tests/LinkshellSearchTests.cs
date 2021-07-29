@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
@@ -50,11 +51,11 @@ namespace xivapi_cs.tests
         }
 
         [Test]
-        public async Task SearchOdinGibberishServer()
+        public void SearchOdinGibberishServer()
         {
             var client = new XivApiClient();
-            var result = await client.LinkshellSearchRegular("Odin", "fhaskjlhfajkshf");
-            Assert.IsNull(result);
+            Assert.ThrowsAsync<ArgumentException>(
+                async () => await client.LinkshellSearchRegular("Odin", "fhaskjlhfajkshf"));
         }
     }
 }

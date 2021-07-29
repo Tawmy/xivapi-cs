@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -23,6 +24,13 @@ namespace xivapi_cs
             _client.UseSystemTextJson();
         }
 
+        private async Task<bool> IsValidServer(string server)
+        {
+            var servers = (await _client.ExecuteGetAsync<string[]>(new RestRequest("servers"))).Data;
+            if (servers.Contains(server)) return true;
+            throw new ArgumentException("Invalid server");
+        }
+
         #region Linkshell
 
         public async Task<LinkshellSearch> LinkshellSearchRegular(string name, string server = null, int? page = null)
@@ -40,11 +48,8 @@ namespace xivapi_cs
             var req = new RestRequest(reqStr);
             req.AddParameter("name", name);
             if (server != null)
-            {
-                var servers = (await _client.ExecuteGetAsync<string[]>(new RestRequest("servers"))).Data;
-                if (servers.Contains(server)) req.AddParameter("server", server);
-                else return null;
-            }
+                if (await IsValidServer(server))
+                    req.AddParameter("server", server);
 
             if (page != null) req.AddParameter("page", page);
 
@@ -79,7 +84,10 @@ namespace xivapi_cs
         {
             var req = new RestRequest("freecompany/search");
             req.AddParameter("name", name);
-            if (server != null) req.AddParameter("server", server);
+            if (server != null)
+                if (await IsValidServer(server))
+                    req.AddParameter("server", server);
+
             if (page != null) req.AddParameter("page", page);
 
             var resp = await _client.ExecuteGetAsync<FreeCompanySearch>(req);
@@ -106,7 +114,10 @@ namespace xivapi_cs
         {
             var req = new RestRequest("character/search");
             req.AddParameter("name", name);
-            if (server != null) req.AddParameter("server", server);
+            if (server != null)
+                if (await IsValidServer(server))
+                    req.AddParameter("server", server);
+
             if (page != null) req.AddParameter("page", page);
 
             var resp = await _client.ExecuteGetAsync<CharacterSearch>(req);
