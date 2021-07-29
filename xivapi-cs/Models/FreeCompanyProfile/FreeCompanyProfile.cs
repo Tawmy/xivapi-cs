@@ -1,5 +1,3 @@
-using xivapi_cs.Models.CharacterProfile;
-
 namespace xivapi_cs.Models.FreeCompanyProfile
 {
     public class FreeCompanyProfile

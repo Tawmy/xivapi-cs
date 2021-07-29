@@ -1,4 +1,4 @@
-namespace xivapi_cs.Models.CharacterProfile
+namespace xivapi_cs.Models
 {
     public class CharacterShort
     {

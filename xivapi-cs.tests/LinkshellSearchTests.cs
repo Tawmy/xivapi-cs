@@ -32,7 +32,7 @@ namespace xivapi_cs.tests
         {
             var client = new XivApiClient();
             var result = await client.LinkshellSearchCrossworld("Odin");
-            var result2 = await client.LinkshellSearchCrossworld("Odin", page: 2);
+            var result2 = await client.LinkshellSearchCrossworld("Odin", 2);
             Assert.IsNotNull(result);
             Assert.IsNotNull(result2);
             Assert.Greater(result.Results.Length, 0);

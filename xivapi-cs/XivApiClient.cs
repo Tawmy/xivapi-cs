@@ -8,6 +8,7 @@ using xivapi_cs.Models.CharacterProfile;
 using xivapi_cs.Models.CharacterSearch;
 using xivapi_cs.Models.FreeCompanyProfile;
 using xivapi_cs.Models.FreeCompanySearch;
+using xivapi_cs.Models.LinkshellProfile;
 using xivapi_cs.Models.LinkshellSearch;
 
 namespace xivapi_cs
@@ -29,10 +30,9 @@ namespace xivapi_cs
             return await LinkshellSearch("linkshell/search", name, server, page);
         }
 
-        public async Task<LinkshellSearch> LinkshellSearchCrossworld(string name, string server = null,
-            bool crossworld = false, int? page = null)
+        public async Task<LinkshellSearch> LinkshellSearchCrossworld(string name, int? page = null)
         {
-            return await LinkshellSearch("linkshell/crossworld/search", name, server, page);
+            return await LinkshellSearch("linkshell/crossworld/search", name, null, page);
         }
 
         private async Task<LinkshellSearch> LinkshellSearch(string reqStr, string name, string server, int? page)
@@ -50,6 +50,25 @@ namespace xivapi_cs
 
             var resp = await _client.ExecuteGetAsync(req);
             return JsonSerializer.Deserialize<LinkshellSearch>(resp.Content);
+        }
+
+        public async Task<Linkshell> LinkshellProfileRegular(string id, int? page = null)
+        {
+            return await LinkshellProfile($"linkshell/{id}", page);
+        }
+
+        public async Task<Linkshell> LinkshellProfileCrossworld(string id, int? page = null)
+        {
+            return await LinkshellProfile($"linkshell/crossworld/{id}", page);
+        }
+
+        private async Task<Linkshell> LinkshellProfile(string reqStr, int? page)
+        {
+            var req = new RestRequest(reqStr);
+            if (page != null) req.AddParameter("page", page);
+
+            var resp = await _client.ExecuteGetAsync(req);
+            return JsonSerializer.Deserialize<Linkshell>(resp.Content);
         }
 
         #endregion
