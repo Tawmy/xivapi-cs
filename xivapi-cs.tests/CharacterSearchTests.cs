@@ -37,7 +37,7 @@ namespace xivapi_cs.tests
         public void SearchGibberish()
         {
             var client = new XivApiClient();
-            Assert.ThrowsAsync<ArgumentException>(async () => 
+            Assert.ThrowsAsync<ArgumentException>(async () =>
                 await client.CharacterSearch("fasklhflaskakshflksaf", "faslkfhka"));
         }
 

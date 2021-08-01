@@ -1,6 +1,6 @@
 namespace xivapi_cs.Models.CharacterProfile
 {
-    public class ClassJobExtended: ClassJobBase
+    public class ClassJobExtended : ClassJobBase
 
     {
         public Class Class { get; set; }

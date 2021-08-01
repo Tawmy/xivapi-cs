@@ -4,5 +4,6 @@ namespace xivapi_cs.Models.CharacterProfile
     {
         public GearSetAttribute[] Attributes { get; set; }
         public Class Class { get; set; }
+        public GearExtended Gear { get; set; }
     }
 }
