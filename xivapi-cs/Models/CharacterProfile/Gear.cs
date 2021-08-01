@@ -11,6 +11,7 @@ namespace xivapi_cs.Models.CharacterProfile
         public GearPiece Legs { get; set; }
         public GearPiece MainHand { get; set; }
         public GearPiece Necklace { get; set; }
+        public GearPiece OffHand { get; set; }
         public GearPiece Ring1 { get; set; }
         public GearPiece Ring2 { get; set; }
         public GearPiece SoulCrystal { get; set; }

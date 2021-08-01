@@ -11,6 +11,7 @@ namespace xivapi_cs.Models.CharacterProfile
         public GearPieceExtended Legs { get; set; }
         public GearPieceExtended MainHand { get; set; }
         public GearPieceExtended Necklace { get; set; }
+        public GearPieceExtended OffHand { get; set; }
         public GearPieceExtended Ring1 { get; set; }
         public GearPieceExtended Ring2 { get; set; }
         public GearPieceExtended SoulCrystal { get; set; }
