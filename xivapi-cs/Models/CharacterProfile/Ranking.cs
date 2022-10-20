@@ -2,7 +2,7 @@ namespace xivapi_cs.Models.CharacterProfile
 {
     public class Ranking
     {
-        public int Monthly { get; set; }
-        public int Weekly { get; set; }
+        public dynamic Monthly { get; set; }    // string "--" when empty instead of usual integer type
+        public dynamic Weekly { get; set; }     // string "--" when empty instead of usual integer type
     }
 }
