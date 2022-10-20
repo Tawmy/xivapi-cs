@@ -5,12 +5,12 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
-using xivapi_cs.Models.CharacterProfile;
-using xivapi_cs.Models.CharacterSearch;
-using xivapi_cs.Models.FreeCompanyProfile;
-using xivapi_cs.Models.FreeCompanySearch;
-using xivapi_cs.Models.LinkshellProfile;
-using xivapi_cs.Models.LinkshellSearch;
+using xivapi_cs.ViewModels.CharacterProfile;
+using xivapi_cs.ViewModels.CharacterSearch;
+using xivapi_cs.ViewModels.FreeCompanyProfile;
+using xivapi_cs.ViewModels.FreeCompanySearch;
+using xivapi_cs.ViewModels.LinkshellProfile;
+using xivapi_cs.ViewModels.LinkshellSearch;
 
 namespace xivapi_cs
 {
