@@ -47,7 +47,8 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(28835226, fetchFreeCompanyMembers: true);
             Assert.IsNotNull(result);
-            if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId)) Assert.IsNotNull(result.FreeCompanyMembers);
+            Assert.IsNull(result.Character.FreeCompanyId);
+            Assert.IsEmpty(result.FreeCompanyMembers);
         }
 
         [Test]
@@ -92,7 +93,8 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(28834908, fetchFreeCompanyMembers: true);
             Assert.IsNotNull(result);
-            if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId)) Assert.IsNotNull(result.FreeCompanyMembers);
+            Assert.IsNull(result.Character.FreeCompanyId);
+            Assert.IsEmpty(result.FreeCompanyMembers);
         }
 
         [Test]

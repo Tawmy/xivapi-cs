@@ -12,7 +12,7 @@ namespace xivapi_cs.DTOs.CharacterProfile
         [JsonPropertyName("DC")]
         public string Dc { get; init; }
 
-        public string FreeCompanyId { get; init; }
+        public string? FreeCompanyId { get; init; }
         public string FreeCompanyName { get; init; }
         public int Gender { get; init; }
         public dynamic Lang { get; init; } // no clue, seems to always be null

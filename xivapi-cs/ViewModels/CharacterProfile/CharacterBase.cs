@@ -28,7 +28,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile
 
         public string Dc { get; }
 
-        public string FreeCompanyId { get; }
+        public string? FreeCompanyId { get; }
         public string FreeCompanyName { get; }
         public int Gender { get; }
         public dynamic Lang { get; }    // no clue, seems to always be null
