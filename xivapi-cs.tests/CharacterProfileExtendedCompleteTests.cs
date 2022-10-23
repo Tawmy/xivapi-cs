@@ -5,9 +5,6 @@ namespace xivapi_cs.tests
 {
     public class CharacterProfileExtendedCompleteTests
     {
-        /*
-         * Some of these are not passing due to the bug (?) explained in CharacterProfileFriendsTests
-         */
         [Test]
         public async Task GetAlyx()
         {

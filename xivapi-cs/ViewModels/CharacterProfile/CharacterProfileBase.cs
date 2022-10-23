@@ -13,7 +13,10 @@ namespace xivapi_cs.ViewModels.CharacterProfile
                 Friends = dto.Friends.Select(x => new CharacterShort(x)).ToArray();
             }
 
-            FriendsPublic = dto.FriendsPublic == true;
+            // fallback workaround since FriendsPublic seems to always be null
+            FriendsPublic = dto.FriendsPublic != null
+                ? FriendsPublic
+                : Friends.Any();
 
             if (dto.FreeCompany != null)
             {

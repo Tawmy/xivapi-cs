@@ -5,12 +5,6 @@ namespace xivapi_cs.tests
 {
     public class CharacterProfileFriendsTests
     {
-        /*
-         * These tests are currently not passing. It seems there's a bug in either XIVAPI or Lodestone itself.
-         * FriendsPublic is null when achievements are not requested in addition to friends, for some reason.
-         * Even when FriendsPublic is true, the list itself still seems to be empty for some people.
-         */
-
         [Test]
         public async Task GetAlyx()
         {
@@ -77,10 +71,10 @@ namespace xivapi_cs.tests
         }
 
         [Test]
-        public async Task GetAlavel()
+        public async Task GetFizz()
         {
             var client = new XivApiClient();
-            var result = await client.CharacterProfile(30410250, fetchFriends: true);
+            var result = await client.CharacterProfile(8696725, fetchFriends: true);
             Assert.IsNotNull(result);
             if (result.FriendsPublic)
             {
