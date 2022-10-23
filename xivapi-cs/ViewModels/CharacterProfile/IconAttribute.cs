@@ -1,14 +1,12 @@
 namespace xivapi_cs.ViewModels.CharacterProfile
 {
-    public class Pet
+    public class IconAttribute : Attribute
     {
-        public Pet(DTOs.CharacterProfile.Pet dto)
+        public IconAttribute(DTOs.CharacterProfile.IconAttribute dto) : base(dto)
         {
             Icon = dto.Icon;
-            Name = dto.Name;
         }
 
         public string Icon { get; }
-        public string Name { get; }
     }
 }

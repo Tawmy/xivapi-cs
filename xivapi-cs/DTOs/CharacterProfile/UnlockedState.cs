@@ -1,8 +1,11 @@
+using System.Text.Json.Serialization;
+
 namespace xivapi_cs.DTOs.CharacterProfile
 {
     public class UnlockedState
     {
-        public int? ID { get; set; }
-        public string Name { get; set; }
+        [JsonPropertyName("ID")]
+        public int? Id { get; init; }
+        public string Name { get; init; }
     }
 }

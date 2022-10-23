@@ -3,10 +3,10 @@ namespace xivapi_cs.DTOs.CharacterProfile
     public class CharacterProfile : CharacterProfileBase
     {
         // AC
-        public Achievements Achievements { get; set; }
-        public bool? AchievementsPublic { get; set; }
+        public Achievements? Achievements { get; init; }
+        public bool? AchievementsPublic { get; init; }
 
         // default
-        public Character Character { get; set; }
+        public Character Character { get; init; }
     }
 }

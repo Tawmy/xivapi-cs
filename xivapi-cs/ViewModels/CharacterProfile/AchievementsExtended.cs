@@ -1,7 +1,14 @@
+using System.Linq;
+
 namespace xivapi_cs.ViewModels.CharacterProfile
 {
     public class AchievementsExtended : AchievementsBase
     {
-        public AchievementExtended[] List { get; set; }
+        public AchievementsExtended(DTOs.CharacterProfile.AchievementsExtended dto) : base(dto)
+        {
+            List = dto.List.Select(x => new AchievementExtended(x)).ToArray();
+        }
+
+        public AchievementExtended[] List { get; }
     }
 }

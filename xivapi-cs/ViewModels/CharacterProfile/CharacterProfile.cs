@@ -3,10 +3,21 @@ namespace xivapi_cs.ViewModels.CharacterProfile
     public class CharacterProfile : CharacterProfileBase
     {
         // AC
-        public Achievements Achievements { get; set; }
-        public bool? AchievementsPublic { get; set; }
+        public CharacterProfile(DTOs.CharacterProfile.CharacterProfile dto) : base(dto)
+        {
+            if (dto.Achievements != null)
+            {
+                Achievements = new Achievements(dto.Achievements);
+            }
+            
+            AchievementsPublic = dto.AchievementsPublic == true;
+            Character = new Character(dto.Character);
+        }
+
+        public Achievements? Achievements { get; }
+        public bool AchievementsPublic { get; }
 
         // default
-        public Character Character { get; set; }
+        public Character Character { get; }
     }
 }

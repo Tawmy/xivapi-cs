@@ -2,19 +2,18 @@ namespace xivapi_cs.DTOs.CharacterProfile
 {
     public class GearExtended
     {
-        public GearPieceExtended Body { get; set; }
-        public GearPieceExtended Bracelets { get; set; }
-        public GearPieceExtended Earrings { get; set; }
-        public GearPieceExtended Feet { get; set; }
-        public GearPieceExtended Hands { get; set; }
-        public GearPieceExtended Head { get; set; }
-        public GearPieceExtended Legs { get; set; }
-        public GearPieceExtended MainHand { get; set; }
-        public GearPieceExtended Necklace { get; set; }
-        public GearPieceExtended OffHand { get; set; }
-        public GearPieceExtended Ring1 { get; set; }
-        public GearPieceExtended Ring2 { get; set; }
-        public GearPieceExtended SoulCrystal { get; set; }
-        public GearPieceExtended Waist { get; set; }
+        public GearPieceExtended Body { get; init; }
+        public GearPieceExtended Bracelets { get; init; }
+        public GearPieceExtended Earrings { get; init; }
+        public GearPieceExtended Feet { get; init; }
+        public GearPieceExtended Hands { get; init; }
+        public GearPieceExtended Head { get; init; }
+        public GearPieceExtended Legs { get; init; }
+        public GearPieceExtended MainHand { get; init; }
+        public GearPieceExtended Necklace { get; init; }
+        public GearPieceExtended? OffHand { get; init; }
+        public GearPieceExtended Ring1 { get; init; }
+        public GearPieceExtended Ring2 { get; init; }
+        public GearPieceExtended? SoulCrystal { get; init; }
     }
 }

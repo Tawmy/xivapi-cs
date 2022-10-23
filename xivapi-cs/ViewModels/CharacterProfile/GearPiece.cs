@@ -2,9 +2,17 @@ namespace xivapi_cs.ViewModels.CharacterProfile
 {
     public class GearPiece : GearPieceBase
     {
-        public int? Dye { get; set; }
-        public int? Mirage { get; set; }
-        public int ID { get; set; }
-        public int[] Materia { get; set; }
+        public GearPiece(DTOs.CharacterProfile.GearPiece dto) : base(dto)
+        {
+            Dye = dto.Dye;
+            Mirage = dto.Mirage;
+            Id = dto.Id;
+            Materia = dto.Materia;
+        }
+
+        public int? Dye { get; }
+        public int? Mirage { get; }
+        public int Id { get; }
+        public int[] Materia { get; }
     }
 }

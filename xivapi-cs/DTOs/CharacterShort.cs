@@ -2,13 +2,13 @@ namespace xivapi_cs.DTOs
 {
     public class CharacterShort
     {
-        public string Avatar { get; set; }
-        public int FeastMatches { get; set; }
-        public int ID { get; set; }
-        public dynamic Lang { get; set; } // no clue, seems to always be null
-        public string Name { get; set; }
-        public string Rank { get; set; }
-        public string RankIcon { get; set; }
-        public string Server { get; set; }
+        public string Avatar { get; init; }
+        public int FeastMatches { get; init; }
+        public int ID { get; init; }
+        public dynamic Lang { get; init; } // no clue, seems to always be null
+        public string Name { get; init; }
+        public string Rank { get; init; }
+        public string RankIcon { get; init; }
+        public string Server { get; init; }
     }
 }

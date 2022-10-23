@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using xivapi_cs.DTOs.CharacterProfile;
 
 namespace xivapi_cs.DTOs
@@ -8,14 +9,17 @@ namespace xivapi_cs.DTOs
         public int ActiveMemberCount { get; set; }
         public string[] Crest { get; set; }
 
-        // ReSharper disable once InconsistentNaming
-        public string DC { get; set; }
+        [JsonPropertyName("DC")]
+        public string Dc { get; set; }
 
         public Estate Estate { get; set; }
         public Focus[] Focus { get; set; }
         public int Formed { get; set; }
         public string GrandCompany { get; set; }
-        public string ID { get; set; }
+        
+        [JsonPropertyName("ID")]
+        public string Id { get; set; }
+        
         public string Name { get; set; }
         public int ParseDate { get; set; }
         public int Rank { get; set; }

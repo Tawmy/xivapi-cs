@@ -2,10 +2,19 @@ namespace xivapi_cs.ViewModels.CharacterProfile
 {
     public class ClassJobsElemental
     {
-        public int ExpLevel { get; set; }
-        public int ExpLevelMax { get; set; }
-        public int ExpLevelTogo { get; set; }
-        public int Level { get; set; }
-        public string Name { get; set; }
+        public ClassJobsElemental(DTOs.CharacterProfile.ClassJobsElemental dto)
+        {
+            ExpLevel = dto.ExpLevel;
+            ExpLevelMax = dto.ExpLevelMax;
+            ExpLevelTogo = dto.ExpLevelTogo;
+            Level = dto.Level;
+            Name = dto.Name;
+        }
+
+        public int ExpLevel { get; }
+        public int ExpLevelMax { get; }
+        public int ExpLevelTogo { get; }
+        public int Level { get; }
+        public string Name { get; }
     }
 }

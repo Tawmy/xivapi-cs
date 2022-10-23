@@ -2,8 +2,15 @@ namespace xivapi_cs.ViewModels.CharacterProfile
 {
     public class ClassJobsBozjan
     {
-        public int? Level { get; set; }
-        public dynamic Mettle { get; set; } // null when not unlocked, int when in int range, otherwise string.empty
-        public string Name { get; set; }
+        public ClassJobsBozjan(DTOs.CharacterProfile.ClassJobsBozjan dto)
+        {
+            Level = dto.Level;
+            Mettle = int.TryParse(dto.Mettle?.ToString(), out var mettle) ? mettle : 0;
+            Name = dto.Name;
+        }
+
+        public int? Level { get; }
+        public int Mettle { get; }
+        public string Name { get; }
     }
 }

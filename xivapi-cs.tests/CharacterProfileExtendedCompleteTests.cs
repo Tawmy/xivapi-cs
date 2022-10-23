@@ -15,15 +15,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(28812634, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -43,15 +41,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(32691240, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -71,15 +67,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(28915387, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -99,15 +93,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(21201379, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -127,15 +119,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(28835226, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -155,15 +145,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(30410250, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -183,15 +171,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(28025341, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -211,15 +197,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(3435267, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -239,15 +223,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(13951694, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -267,15 +249,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(28834908, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);
@@ -295,15 +275,13 @@ namespace xivapi_cs.tests
             var result = await client.CharacterProfileExtended(18188832, true, true, true, true, true);
             Assert.IsNotNull(result);
 
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.IsNotEmpty(result.Achievements.List);
             }
 
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
+            if (result.FriendsPublic)
             {
                 Assert.IsNotNull(result.Friends);
                 Assert.IsNotEmpty(result.Friends);

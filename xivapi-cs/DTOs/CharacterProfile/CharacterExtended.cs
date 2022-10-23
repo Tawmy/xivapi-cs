@@ -1,16 +1,21 @@
+using System.Text.Json.Serialization;
+
 namespace xivapi_cs.DTOs.CharacterProfile
 {
     public class CharacterExtended : CharacterBase
     {
-        public ClassJobExtended ActiveClassJob { get; set; }
-        public ClassJobExtended[] ClassJobs { get; set; }
-        public GearSetExtended GearSet { get; set; }
-        public int GenderID { get; set; } // why
-        public GrandCompanyExtended GrandCompany { get; set; }
-        public GuardianDeity GuardianDeity { get; set; }
-        public Race Race { get; set; }
-        public Title Title { get; set; }
-        public Town Town { get; set; }
-        public Tribe Tribe { get; set; }
+        public ClassJobExtended ActiveClassJob { get; init; }
+        public ClassJobExtended[] ClassJobs { get; init; }
+        public GearSetExtended GearSet { get; init; }
+        
+        [JsonPropertyName("GenderID")]
+        public int GenderId { get; init; }
+        
+        public GrandCompanyExtended? GrandCompany { get; init; }
+        public GuardianDeity GuardianDeity { get; init; }
+        public UrlAttribute Race { get; init; }
+        public IconUrlAttribute Title { get; init; }
+        public IconUrlAttribute Town { get; init; }
+        public IconUrlAttribute Tribe { get; init; }
     }
 }

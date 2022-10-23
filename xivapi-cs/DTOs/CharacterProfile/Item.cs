@@ -1,14 +1,13 @@
+using System.Text.Json.Serialization;
+
 namespace xivapi_cs.DTOs.CharacterProfile
 {
-    public class Item
+    public class Item : IconAttribute
     {
-        public ClassJobCategory ClassJobCategory { get; set; }
-        public int ID { get; set; }
-        public string Icon { get; set; }
-        public ItemUICategory ItemUiCategory { get; set; }
-        public int LevelEquip { get; set; }
-        public int LevelItem { get; set; }
-        public string Name { get; set; }
-        public int Rarity { get; set; }
+        public Attribute ClassJobCategory { get; init; }
+        public Attribute? ItemUiCategory { get; init; }
+        public int LevelEquip { get; init; }
+        public int LevelItem { get; init; }
+        public int Rarity { get; init; }
     }
 }

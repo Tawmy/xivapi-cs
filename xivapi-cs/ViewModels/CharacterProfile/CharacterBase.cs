@@ -1,26 +1,42 @@
 namespace xivapi_cs.ViewModels.CharacterProfile
 {
-    public class CharacterBase
+    public class CharacterBase : Attribute
     {
-        public string Avatar { get; set; }
-        public string Bio { get; set; }
-        public ClassJobsBozjan ClassJobsBozjan { get; set; }
-        public ClassJobsElemental ClassJobsElemental { get; set; }
+        public CharacterBase(DTOs.CharacterProfile.CharacterBase dto) : base(dto)
+        {
+            Avatar = dto.Avatar;
+            Bio = dto.Bio;
+            ClassJobsBozjan = new ClassJobsBozjan(dto.ClassJobsBozjan);
+            ClassJobsElemental = new ClassJobsElemental(dto.ClassJobsElemental);
+            Dc = dto.Dc;
+            FreeCompanyId = dto.FreeCompanyId;
+            FreeCompanyName = dto.FreeCompanyName;
+            Gender = dto.Gender;
+            Lang = dto.Lang;
+            Nameday = dto.Nameday;
+            ParseDate = dto.ParseDate;
+            Portrait = dto.Portrait;
+            PvPTeamId = dto.PvPTeamId;
+            Server = dto.Server;
+            TitleTop = dto.TitleTop;
+        }
 
-        // ReSharper disable once InconsistentNaming
-        public string DC { get; set; }
+        public string Avatar { get; }
+        public string Bio { get; }
+        public ClassJobsBozjan ClassJobsBozjan { get; }
+        public ClassJobsElemental ClassJobsElemental { get; }
 
-        public string FreeCompanyId { get; set; }
-        public string FreeCompanyName { get; set; }
-        public int Gender { get; set; }
-        public int ID { get; set; }
-        public dynamic Lang { get; set; } // no clue, seems to always be null
-        public string Name { get; set; }
-        public string Nameday { get; set; }
-        public int ParseDate { get; set; }
-        public string Portrait { get; set; }
-        public int? PvPTeamId { get; set; }
-        public string Server { get; set; }
-        public bool TitleTop { get; set; }
+        public string Dc { get; }
+
+        public string FreeCompanyId { get; }
+        public string FreeCompanyName { get; }
+        public int Gender { get; }
+        public dynamic Lang { get; }    // no clue, seems to always be null
+        public string Nameday { get; }
+        public int ParseDate { get; }
+        public string Portrait { get; }
+        public int? PvPTeamId { get; }
+        public string Server { get; }
+        public bool TitleTop { get; }
     }
 }

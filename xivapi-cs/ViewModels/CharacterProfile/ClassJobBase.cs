@@ -2,12 +2,23 @@ namespace xivapi_cs.ViewModels.CharacterProfile
 {
     public class ClassJobBase
     {
-        public int ExpLevel { get; set; }
-        public int ExpLevelMax { get; set; }
-        public int ExpLevelTogo { get; set; }
-        public bool IsSpecialised { get; set; }
-        public int Level { get; set; }
-        public string Name { get; set; }
-        public UnlockedState UnlockedState { get; set; }
+        public ClassJobBase(DTOs.CharacterProfile.ClassJobBase dto)
+        {
+            ExpLevel = dto.ExpLevel;
+            ExpLevelMax = dto.ExpLevelMax;
+            ExpLevelTogo = dto.ExpLevelTogo;
+            IsSpecialised = dto.IsSpecialised;
+            Level = dto.Level;
+            Name = dto.Name;
+            UnlockedState = new UnlockedState(dto.UnlockedState);
+        }
+
+        public int ExpLevel { get; }
+        public int ExpLevelMax { get; }
+        public int ExpLevelTogo { get; }
+        public bool IsSpecialised { get; }
+        public int Level { get; }
+        public string Name { get; }
+        public UnlockedState UnlockedState { get; }
     }
 }

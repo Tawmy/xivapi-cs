@@ -2,9 +2,9 @@ namespace xivapi_cs.DTOs.CharacterProfile
 {
     public class GearPieceExtended : GearPieceBase
     {
-        public Dye Dye { get; set; }
-        public Item Item { get; set; }
-        public Materia[] Materia { get; set; }
-        public Mirage Mirage { get; set; }
+        public IconAttribute? Dye { get; init; }
+        public Item Item { get; init; }
+        public IconUrlAttribute[] Materia { get; init; }
+        public IconAttribute? Mirage { get; init; }
     }
 }

@@ -2,7 +2,13 @@ namespace xivapi_cs.ViewModels.CharacterProfile
 {
     public class Attribute
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public Attribute(DTOs.CharacterProfile.Attribute dto)
+        {
+            Id = dto.Id;
+            Name = dto.Name;
+        }
+
+        public int Id { get; }
+        public string Name { get; }
     }
 }

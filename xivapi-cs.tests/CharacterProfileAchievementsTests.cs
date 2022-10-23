@@ -11,8 +11,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(28812634, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -25,8 +24,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(32691240, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -39,8 +37,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(28915387, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -53,8 +50,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(21201379, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -67,8 +63,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(28835226, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -81,8 +76,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(30410250, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -95,8 +89,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(28025341, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -109,8 +102,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(3435267, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -123,8 +115,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(13951694, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -137,8 +128,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(28834908, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);
@@ -151,8 +141,7 @@ namespace xivapi_cs.tests
             var client = new XivApiClient();
             var result = await client.CharacterProfile(18188832, true);
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.AchievementsPublic);
-            if (result.AchievementsPublic.Value)
+            if (result.AchievementsPublic)
             {
                 Assert.IsNotNull(result.Achievements);
                 Assert.Greater(result.Achievements.List.Length, 0);

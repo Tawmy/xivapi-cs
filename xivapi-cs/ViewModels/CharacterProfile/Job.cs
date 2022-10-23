@@ -1,11 +1,12 @@
 namespace xivapi_cs.ViewModels.CharacterProfile
 {
-    public class Job
+    public class Job : IconUrlAttribute
     {
-        public string Abbreviation { get; set; }
-        public int ID { get; set; }
-        public string Icon { get; set; }
-        public string Name { get; set; }
-        public string Url { get; set; }
+        public Job(DTOs.CharacterProfile.Job dto) : base(dto)
+        {
+            Abbreviation = dto.Abbreviation;
+        }
+
+        public string Abbreviation { get; }
     }
 }
