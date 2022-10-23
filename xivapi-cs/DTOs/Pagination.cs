@@ -1,6 +1,6 @@
 namespace xivapi_cs.DTOs
 {
-    public class Pagination
+    internal class Pagination
     {
         public int Page { get; init; }
         public int? PageNext { get; init; }

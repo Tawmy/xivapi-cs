@@ -1,8 +1,12 @@
+using System.Text.Json.Serialization;
+
 namespace xivapi_cs.DTOs.LinkshellProfile
 {
-    public class LinkshellProfile
+    internal class LinkshellProfile
     {
-        public string ID { get; set; }
+        [JsonPropertyName("ID")]
+        public string Id { get; set; }
+        
         public Pagination Pagination { get; set; }
         public Profile Profile { get; set; }
         public CharacterShort[] Results { get; set; }

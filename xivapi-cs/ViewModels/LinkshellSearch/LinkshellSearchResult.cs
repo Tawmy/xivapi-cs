@@ -1,10 +1,14 @@
+using xivapi_cs.Models;
+
 namespace xivapi_cs.ViewModels.LinkshellSearch
 {
-    public class LinkshellSearchResult
+    public class LinkshellSearchResult : LinkshellSearchResultBase
     {
-        public string[] Crest { get; set; }
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public string Server { get; set; }
+        internal LinkshellSearchResult(DTOs.LinkshellSearch.LinkshellSearchResult dto) : base (dto)
+        {
+            HomeWorldDetails = new HomeWorldDetails(dto.Server);
+        }
+        
+        public HomeWorldDetails HomeWorldDetails { get; }
     }
 }

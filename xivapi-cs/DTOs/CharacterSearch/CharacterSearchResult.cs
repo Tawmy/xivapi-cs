@@ -1,14 +1,14 @@
+using xivapi_cs.DTOs.CharacterProfile;
+
 namespace xivapi_cs.DTOs.CharacterSearch
 {
-    public class CharacterSearchResult
+    internal class CharacterSearchResult : Attribute
     {
-        public string Avatar { get; set; }
-        public int FeastMatches { get; set; }
-        public int ID { get; set; }
-        public string Lang { get; set; }
-        public string Name { get; set; }
-        public dynamic Rank { get; set; } // no clue, seems to always be null
-        public dynamic RankIcon { get; set; } // no clue, seems to always be null
-        public string Server { get; set; }
+        public string Avatar { get; init; } = null!;
+        public int FeastMatches { get; init; }
+        public string Lang { get; init; } = null!;
+        public object? Rank { get; init; } // no clue, seems to always be null
+        public object? RankIcon { get; init; } // no clue, seems to always be null
+        public string Server { get; init; } = null!;
     }
 }

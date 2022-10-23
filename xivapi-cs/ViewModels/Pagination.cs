@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels
 {
     public class Pagination
     {
-        public Pagination(DTOs.Pagination dto)
+        internal Pagination(DTOs.Pagination dto)
         {
             Page = dto.Page;
             PageNext = dto.PageNext;

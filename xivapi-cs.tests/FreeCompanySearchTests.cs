@@ -24,10 +24,10 @@ namespace xivapi_cs.tests
         }
 
         [Test]
-        public async Task SearchAkadaemiaEorzeanum()
+        public async Task SearchAkadaemiaEorzea()
         {
             var client = new XivApiClient();
-            var result = await client.FreeCompanySearch("Akadaemia Eorzeanum");
+            var result = await client.FreeCompanySearch("Akadaemia Eorzea");
             Assert.IsNotNull(result);
             Assert.Greater(result.Results.Length, 0);
         }

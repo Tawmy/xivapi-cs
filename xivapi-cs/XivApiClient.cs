@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
 using xivapi_cs.ViewModels.CharacterProfile;
+using xivapi_cs.ViewModels.CharacterSearch;
+using xivapi_cs.ViewModels.FreeCompanySearch;
+using xivapi_cs.ViewModels.LinkshellProfile;
+using xivapi_cs.ViewModels.LinkshellSearch;
 
 namespace xivapi_cs
 {
@@ -28,23 +32,30 @@ namespace xivapi_cs
 
         #region Linkshell
 
-        public async Task<DTOs.LinkshellSearch.LinkshellSearch> LinkshellSearchRegular(string name, string server = null, int? page = null)
+        public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, string? server = null, int? page = null)
         {
-            return await LinkshellSearch("linkshell/search", name, server, page);
+            var res = await LinkshellSearch("linkshell/search", name, server, page);
+            return res != null ? new LinkshellSearch(res) : null;
         }
 
-        public async Task<DTOs.LinkshellSearch.LinkshellSearch> LinkshellSearchCrossworld(string name, int? page = null)
+        public async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworld(string name, int? page = null)
         {
-            return await LinkshellSearch("linkshell/crossworld/search", name, null, page);
+            var res = await LinkshellSearch("linkshell/crossworld/search", name, null, page);
+            return res != null ? new CrossworldLinkshellSearch(res) : null;
         }
 
-        private async Task<DTOs.LinkshellSearch.LinkshellSearch> LinkshellSearch(string reqStr, string name, string server, int? page)
+        private async Task<DTOs.LinkshellSearch.LinkshellSearch?> LinkshellSearch(string reqStr, string name, string? server, int? page)
         {
             var req = new RestRequest(reqStr);
             req.AddParameter("name", name);
+            
             if (server != null)
+            {
                 if (await IsValidServer(server))
+                {
                     req.AddParameter("server", server);
+                }
+            }
 
             if (page != null) req.AddParameter("page", page);
 
@@ -52,30 +63,45 @@ namespace xivapi_cs
             return JsonSerializer.Deserialize<DTOs.LinkshellSearch.LinkshellSearch>(resp.Content);
         }
 
-        public async Task<DTOs.LinkshellProfile.Linkshell> LinkshellProfileRegular(string id, int? page = null)
+        private async Task<CrossworldLinkshellSearch?> CrossworldLinkshellSearch(string reqStr, string name, int? page)
+        {
+            var req = new RestRequest(reqStr);
+            req.AddParameter("name", name);
+            if (page != null)
+            {
+                req.AddParameter("page", page);
+            }
+
+            var resp = await _client.ExecuteGetAsync(req);
+            var des = JsonSerializer.Deserialize<DTOs.LinkshellSearch.LinkshellSearch>(resp.Content);
+            return des != null ? new CrossworldLinkshellSearch(des) : null;
+        }
+
+        public async Task<Linkshell?> LinkshellProfileRegular(string id, int? page = null)
         {
             return await LinkshellProfile($"linkshell/{id}", page);
         }
 
-        public async Task<DTOs.LinkshellProfile.Linkshell> LinkshellProfileCrossworld(string id, int? page = null)
+        public async Task<Linkshell?> LinkshellProfileCrossworld(string id, int? page = null)
         {
             return await LinkshellProfile($"linkshell/crossworld/{id}", page);
         }
 
-        private async Task<DTOs.LinkshellProfile.Linkshell> LinkshellProfile(string reqStr, int? page)
+        private async Task<Linkshell?> LinkshellProfile(string reqStr, int? page)
         {
             var req = new RestRequest(reqStr);
             if (page != null) req.AddParameter("page", page);
 
             var resp = await _client.ExecuteGetAsync(req);
-            return JsonSerializer.Deserialize<DTOs.LinkshellProfile.Linkshell>(resp.Content);
+            var des = JsonSerializer.Deserialize<DTOs.LinkshellProfile.Linkshell>(resp.Content);
+            return des != null ? new Linkshell(des) : null;
         }
 
         #endregion
 
         #region Free Company
 
-        public async Task<DTOs.FreeCompanySearch.FreeCompanySearch> FreeCompanySearch(string name, string server = null, int? page = null)
+        public async Task<FreeCompanySearch?> FreeCompanySearch(string name, string? server = null, int? page = null)
         {
             var req = new RestRequest("freecompany/search");
             req.AddParameter("name", name);
@@ -85,11 +111,12 @@ namespace xivapi_cs
 
             if (page != null) req.AddParameter("page", page);
 
-            var resp = await _client.ExecuteGetAsync<DTOs.FreeCompanySearch.FreeCompanySearch>(req);
-            return resp.Data;
+            var resp = await _client.ExecuteGetAsync(req);
+            var des = JsonSerializer.Deserialize<DTOs.FreeCompanySearch.FreeCompanySearch>(resp.Content);
+            return des != null ? new FreeCompanySearch(des) : null;
         }
 
-        public async Task<DTOs.FreeCompanyProfile.FreeCompanyProfile> FreeCompanyProfile(string id, bool fetchMembers = false)
+        public async Task<DTOs.FreeCompanyProfile.FreeCompanyProfile?> FreeCompanyProfile(string id, bool fetchMembers = false)
         {
             var req = new RestRequest($"freecompany/{id}");
 
@@ -105,7 +132,7 @@ namespace xivapi_cs
 
         #region Character
 
-        public async Task<DTOs.CharacterSearch.CharacterSearch> CharacterSearch(string name, string server = null, int? page = null)
+        public async Task<CharacterSearch?> CharacterSearch(string name, string? server = null, int? page = null)
         {
             var req = new RestRequest("character/search");
             req.AddParameter("name", name);
@@ -115,8 +142,9 @@ namespace xivapi_cs
 
             if (page != null) req.AddParameter("page", page);
 
-            var resp = await _client.ExecuteGetAsync<DTOs.CharacterSearch.CharacterSearch>(req);
-            return resp.Data;
+            var resp = await _client.ExecuteGetAsync(req);
+            var des = JsonSerializer.Deserialize<DTOs.CharacterSearch.CharacterSearch>(resp.Content);
+            return des != null ? new CharacterSearch(des) : null;
         }
 
         public async Task<CharacterProfile?> CharacterProfile(int id,

@@ -1,10 +1,14 @@
+using System.Text.Json.Serialization;
+
 namespace xivapi_cs.DTOs.FreeCompanySearch
 {
-    public class FreeCompanySearchResult
+    internal class FreeCompanySearchResult
     {
-        public string[] Crest { get; set; }
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public string Server { get; set; }
+        [JsonPropertyName("ID")]
+        public string Id { get; init; } = null!;
+        
+        public string Name { get; init; } = null!;
+        public string[] Crest { get; init; } = null!;
+        public string Server { get; init; } = null!;
     }
 }

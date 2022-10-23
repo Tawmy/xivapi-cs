@@ -2,9 +2,9 @@ using System.Text.Json.Serialization;
 
 namespace xivapi_cs.DTOs.LinkshellProfile
 {
-    public class Linkshell
+    internal class Linkshell
     {
         // why is this a thing
-        [JsonPropertyName("Linkshell")] public LinkshellProfile LinkshellProfile { get; set; }
+        [JsonPropertyName("Linkshell")] public LinkshellProfile LinkshellProfile { get; init; } = null!;
     }
 }

@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels
 {
     public class CharacterShort
     {
-        public CharacterShort(DTOs.CharacterShort dto)
+        internal CharacterShort(DTOs.CharacterShort dto)
         {
             Avatar = dto.Avatar;
             FeastMatches = dto.FeastMatches;
