@@ -7,6 +7,7 @@ using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
 using xivapi_cs.ViewModels.CharacterProfile;
 using xivapi_cs.ViewModels.CharacterSearch;
+using xivapi_cs.ViewModels.FreeCompanyProfile;
 using xivapi_cs.ViewModels.FreeCompanySearch;
 using xivapi_cs.ViewModels.LinkshellProfile;
 using xivapi_cs.ViewModels.LinkshellSearch;
@@ -79,22 +80,23 @@ namespace xivapi_cs
 
         public async Task<Linkshell?> LinkshellProfileRegular(string id, int? page = null)
         {
-            return await LinkshellProfile($"linkshell/{id}", page);
+            var res = await LinkshellProfile($"linkshell/{id}", page);
+            return res != null ? new Linkshell(res) : null;
         }
 
-        public async Task<Linkshell?> LinkshellProfileCrossworld(string id, int? page = null)
+        public async Task<CrossworldLinkshell?> LinkshellProfileCrossworld(string id, int? page = null)
         {
-            return await LinkshellProfile($"linkshell/crossworld/{id}", page);
+            var res = await LinkshellProfile($"linkshell/crossworld/{id}", page);
+            return res != null ? new CrossworldLinkshell(res) : null;
         }
 
-        private async Task<Linkshell?> LinkshellProfile(string reqStr, int? page)
+        private async Task<DTOs.LinkshellProfile.Linkshell?> LinkshellProfile(string reqStr, int? page)
         {
             var req = new RestRequest(reqStr);
             if (page != null) req.AddParameter("page", page);
 
             var resp = await _client.ExecuteGetAsync(req);
-            var des = JsonSerializer.Deserialize<DTOs.LinkshellProfile.Linkshell>(resp.Content);
-            return des != null ? new Linkshell(des) : null;
+            return JsonSerializer.Deserialize<DTOs.LinkshellProfile.Linkshell>(resp.Content);
         }
 
         #endregion
@@ -116,7 +118,7 @@ namespace xivapi_cs
             return des != null ? new FreeCompanySearch(des) : null;
         }
 
-        public async Task<DTOs.FreeCompanyProfile.FreeCompanyProfile?> FreeCompanyProfile(string id, bool fetchMembers = false)
+        public async Task<FreeCompanyProfile?> FreeCompanyProfile(string id, bool fetchMembers = false)
         {
             var req = new RestRequest($"freecompany/{id}");
 
@@ -125,7 +127,8 @@ namespace xivapi_cs
             if (fetch.Count > 0) req.AddParameter("data", string.Join(",", fetch));
 
             var resp = await _client.ExecuteGetAsync(req);
-            return JsonSerializer.Deserialize<DTOs.FreeCompanyProfile.FreeCompanyProfile>(resp.Content);
+            var des = JsonSerializer.Deserialize<DTOs.FreeCompanyProfile.FreeCompanyProfile>(resp.Content);
+            return des != null ? new FreeCompanyProfile(des) : null;
         }
 
         #endregion

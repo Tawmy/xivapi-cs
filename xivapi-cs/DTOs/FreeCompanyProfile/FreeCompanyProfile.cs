@@ -1,8 +1,8 @@
 namespace xivapi_cs.DTOs.FreeCompanyProfile
 {
-    public class FreeCompanyProfile
+    internal class FreeCompanyProfile
     {
-        public FreeCompany FreeCompany { get; set; }
-        public CharacterShort[] FreeCompanyMembers { get; set; }
+        public FreeCompany FreeCompany { get; init; } = null!;
+        public CharacterShort[]? FreeCompanyMembers { get; init; }
     }
 }

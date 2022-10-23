@@ -1,16 +1,16 @@
+using System.Collections.Generic;
+using System.Linq;
 using xivapi_cs.Models;
 
 namespace xivapi_cs.ViewModels.LinkshellProfile
 {
-    public class Profile
+    public class Profile : ProfileBase
     {
-        internal Profile(DTOs.LinkshellProfile.Profile dto)
+        internal Profile(DTOs.LinkshellProfile.Profile dto, IEnumerable<DTOs.CharacterShort> members) : base(dto)
         {
-            Name = dto.Name;
-            HomeWorldDetails = new HomeWorldDetails(dto.Server);
+            HomeWorldDetails = new HomeWorldDetails(members.First().Server);
         }
-
-        public string Name { get; }
+        
         public HomeWorldDetails HomeWorldDetails { get; }
     }
 }

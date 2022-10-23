@@ -1,20 +1,12 @@
-using System.Linq;
-
 namespace xivapi_cs.ViewModels.LinkshellProfile
 {
-    public class LinkshellProfile
+    public class LinkshellProfile : LinkshellProfileBase
     {
-        internal LinkshellProfile(DTOs.LinkshellProfile.LinkshellProfile dto)
+        internal LinkshellProfile(DTOs.LinkshellProfile.LinkshellProfile dto) : base(dto)
         {
-            Id = dto.Id;
-            Pagination = new Pagination(dto.Pagination);
-            Profile = new Profile(dto.Profile);
-            Results = dto.Results.Select(x => new CharacterShort(x)).ToArray();
+            Profile = new Profile(dto.Profile, dto.Results);
         }
 
-        public string Id { get; }
-        public Pagination Pagination { get; }
         public Profile Profile { get; }
-        public CharacterShort[] Results { get; }
     }
 }
