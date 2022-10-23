@@ -64,7 +64,7 @@ public static class HomeWorldExtension
             case HomeWorld.Atomos:
             case HomeWorld.Carbuncle:
             case HomeWorld.Garuda:
-            case HomeWorld.Gungir:
+            case HomeWorld.Gungnir:
             case HomeWorld.Kujata:
             case HomeWorld.Tonberry:
             case HomeWorld.Typhon:

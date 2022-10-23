@@ -64,7 +64,7 @@ public enum HomeWorld
     Atomos,
     Carbuncle,
     Garuda,
-    Gungir,
+    Gungnir,
     Kujata,
     Tonberry,
     Typhon,
