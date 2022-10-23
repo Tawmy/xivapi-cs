@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace xivapi_cs.ViewModels.CharacterProfile
 {
     public class CharacterProfile : CharacterProfileBase
@@ -10,7 +12,11 @@ namespace xivapi_cs.ViewModels.CharacterProfile
                 Achievements = new Achievements(dto.Achievements);
             }
             
-            AchievementsPublic = dto.AchievementsPublic == true;
+            // fallback workaround since AchievementsPublic seems to always be null
+            AchievementsPublic = dto.AchievementsPublic != null
+                ? AchievementsPublic
+                : dto.Achievements?.List.Any() == true;
+            
             Character = new Character(dto.Character);
         }
 
