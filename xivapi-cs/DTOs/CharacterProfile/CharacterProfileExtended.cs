@@ -1,11 +1,11 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class CharacterProfileExtended : CharacterProfileBase
+internal class CharacterProfileExtended : CharacterProfileBase
 {
     // AC
-    public AchievementsExtended Achievements { get; init; }
+    public AchievementsExtended Achievements { get; init; } = null!;
     public bool? AchievementsPublic { get; init; }
 
     // default
-    public CharacterExtended Character { get; init; }
+    public CharacterExtended Character { get; init; } = null!;
 }

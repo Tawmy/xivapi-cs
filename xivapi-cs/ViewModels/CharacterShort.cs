@@ -6,7 +6,7 @@ public class CharacterShort
     {
         Avatar = dto.Avatar;
         FeastMatches = dto.FeastMatches;
-        Id = dto.ID;
+        Id = dto.Id;
         Lang = dto.Lang;
         Name = dto.Name;
         Rank = dto.Rank;
@@ -17,7 +17,7 @@ public class CharacterShort
     public string Avatar { get; set; }
     public int FeastMatches { get; set; }
     public int Id { get; set; }
-    public dynamic Lang { get; set; } // no clue, seems to always be null
+    public object? Lang { get; set; } // no clue, seems to always be null
     public string Name { get; set; }
     public string Rank { get; set; }
     public string RankIcon { get; set; }

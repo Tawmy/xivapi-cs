@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Item : IconAttribute
 {
-    public Item(DTOs.CharacterProfile.Item dto) : base(dto)
+    internal Item(DTOs.CharacterProfile.Item dto) : base(dto)
     {
         ClassJobCategory = new Attribute(dto.ClassJobCategory);
 

@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class UnlockedState
 {
-    public UnlockedState(DTOs.CharacterProfile.UnlockedState dto)
+    internal UnlockedState(DTOs.CharacterProfile.UnlockedState dto)
     {
         Id = dto.Id;
         Name = dto.Name;

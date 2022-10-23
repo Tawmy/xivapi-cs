@@ -9,7 +9,6 @@ public class CharacterSearchResult : Attribute
     {
         Avatar = dto.Avatar;
         FeastMatches = dto.FeastMatches;
-        Id = dto.Id;
         Rank = dto.Rank;
         RankIcon = dto.RankIcon;
         HomeWorldDetails = new HomeWorldDetails(dto.Server);
@@ -17,7 +16,6 @@ public class CharacterSearchResult : Attribute
 
     public string Avatar { get; }
     public int FeastMatches { get; }
-    public int Id { get; }
     public object? Rank { get; } // no clue, seems to always be null
     public object? RankIcon { get; } // no clue, seems to always be null
     public HomeWorldDetails HomeWorldDetails { get; }

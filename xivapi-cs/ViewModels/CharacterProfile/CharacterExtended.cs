@@ -4,7 +4,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class CharacterExtended : CharacterBase
 {
-    public CharacterExtended(DTOs.CharacterProfile.CharacterExtended dto) : base(dto)
+    internal CharacterExtended(DTOs.CharacterProfile.CharacterExtended dto) : base(dto)
     {
         ActiveClassJob = new ClassJobExtended(dto.ActiveClassJob);
         ClassJobs = dto.ClassJobs.Select(x => new ClassJobExtended(x)).ToArray();

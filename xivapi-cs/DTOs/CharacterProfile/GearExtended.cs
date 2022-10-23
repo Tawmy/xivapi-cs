@@ -1,6 +1,6 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class GearExtended
+internal class GearExtended
 {
     public GearPieceExtended? Body { get; init; }
     public GearPieceExtended? Bracelets { get; init; }

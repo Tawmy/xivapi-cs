@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace xivapi_cs.DTOs.LinkshellSearch;
 
-public class LinkshellSearchResult
+internal class LinkshellSearchResult
 {
     [JsonPropertyName("ID")] public string Id { get; init; } = null!;
 

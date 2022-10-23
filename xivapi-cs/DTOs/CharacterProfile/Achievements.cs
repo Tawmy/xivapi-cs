@@ -1,7 +1,6 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class Achievements : AchievementsBase
-
+internal class Achievements : AchievementsBase
 {
-    public Achievement[] List { get; init; }
+    public Achievement[] List { get; init; } = null!;
 }

@@ -4,7 +4,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Character : CharacterBase
 {
-    public Character(DTOs.CharacterProfile.Character dto) : base(dto)
+    internal Character(DTOs.CharacterProfile.Character dto) : base(dto)
     {
         ActiveClassJob = new ClassJob(dto.ActiveClassJob);
         ClassJobs = dto.ClassJobs.Select(x => new ClassJob(x)).ToArray();

@@ -72,20 +72,6 @@ public class XivApiClient
         return JsonSerializer.Deserialize<DTOs.LinkshellSearch.LinkshellSearch>(resp.Content);
     }
 
-    private async Task<CrossworldLinkshellSearch?> CrossworldLinkshellSearch(string reqStr, string name, int? page)
-    {
-        var req = new RestRequest(reqStr);
-        req.AddParameter("name", name);
-        if (page != null)
-        {
-            req.AddParameter("page", page);
-        }
-
-        var resp = await _client.ExecuteGetAsync(req);
-        var des = JsonSerializer.Deserialize<DTOs.LinkshellSearch.LinkshellSearch>(resp.Content);
-        return des != null ? new CrossworldLinkshellSearch(des) : null;
-    }
-
     public async Task<Linkshell?> LinkshellProfileRegular(string id, int? page = null)
     {
         var res = await LinkshellProfile($"linkshell/{id}", page);

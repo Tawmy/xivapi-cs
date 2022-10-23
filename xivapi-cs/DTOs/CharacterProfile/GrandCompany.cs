@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class GrandCompany
+internal class GrandCompany
 {
     [JsonPropertyName("NameID")] public int NameId { get; init; }
 

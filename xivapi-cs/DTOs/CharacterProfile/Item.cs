@@ -1,8 +1,8 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class Item : IconAttribute
+internal class Item : IconAttribute
 {
-    public Attribute ClassJobCategory { get; init; }
+    public Attribute ClassJobCategory { get; init; } = null!;
     public Attribute? ItemUiCategory { get; init; }
     public int LevelEquip { get; init; }
     public int LevelItem { get; init; }

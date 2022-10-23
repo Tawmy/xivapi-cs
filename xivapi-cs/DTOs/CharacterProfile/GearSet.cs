@@ -3,11 +3,11 @@ using System.Text.Json.Serialization;
 
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class GearSet
+internal class GearSet
 {
-    public Dictionary<string, int> Attributes { get; init; }
+    public Dictionary<string, int> Attributes { get; init; } = null!;
 
     [JsonPropertyName("ClassID")] public int ClassId { get; init; }
 
-    public Gear Gear { get; init; }
+    public Gear Gear { get; init; } = null!;
 }

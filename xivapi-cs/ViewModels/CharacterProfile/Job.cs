@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Job : IconUrlAttribute
 {
-    public Job(DTOs.CharacterProfile.Job dto) : base(dto)
+    internal Job(DTOs.CharacterProfile.Job dto) : base(dto)
     {
         Abbreviation = dto.Abbreviation;
     }

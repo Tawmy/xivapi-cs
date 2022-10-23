@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GearExtended
 {
-    public GearExtended(DTOs.CharacterProfile.GearExtended dto)
+    internal GearExtended(DTOs.CharacterProfile.GearExtended dto)
     {
         if (dto.Body != null)
         {

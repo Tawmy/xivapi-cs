@@ -3,7 +3,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 public class CharacterProfileExtended : CharacterProfileBase
 {
     // AC
-    public CharacterProfileExtended(DTOs.CharacterProfile.CharacterProfileExtended dto) : base(dto)
+    internal CharacterProfileExtended(DTOs.CharacterProfile.CharacterProfileExtended dto) : base(dto)
     {
         Achievements = new AchievementsExtended(dto.Achievements);
         AchievementsPublic = dto.AchievementsPublic == true;

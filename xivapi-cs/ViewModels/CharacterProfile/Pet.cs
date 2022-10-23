@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Pet
 {
-    public Pet(DTOs.CharacterProfile.Pet dto)
+    internal Pet(DTOs.CharacterProfile.Pet dto)
     {
         Icon = dto.Icon;
         Name = dto.Name;

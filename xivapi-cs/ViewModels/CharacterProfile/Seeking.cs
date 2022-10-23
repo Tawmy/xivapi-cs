@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Seeking
 {
-    public Seeking(DTOs.CharacterProfile.Seeking dto)
+    internal Seeking(DTOs.CharacterProfile.Seeking dto)
     {
         Icon = dto.Icon;
         Name = dto.Name;

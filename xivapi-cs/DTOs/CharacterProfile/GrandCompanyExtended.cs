@@ -1,7 +1,7 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class GrandCompanyExtended
+internal class GrandCompanyExtended
 {
-    public UrlAttribute Company { get; init; }
-    public IconUrlAttribute Rank { get; init; }
+    public UrlAttribute Company { get; init; } = null!;
+    public IconUrlAttribute Rank { get; init; } = null!;
 }

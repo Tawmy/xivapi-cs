@@ -1,7 +1,7 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class ClassJobExtended : ClassJobBase
+internal class ClassJobExtended : ClassJobBase
 {
-    public Class Class { get; init; }
-    public Job Job { get; init; }
+    public Class Class { get; init; } = null!;
+    public Job Job { get; init; } = null!;
 }

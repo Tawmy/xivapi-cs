@@ -5,13 +5,18 @@ namespace xivapi_cs.ViewModels;
 
 public class FreeCompany
 {
-    public FreeCompany(DTOs.FreeCompany dto)
+    internal FreeCompany(DTOs.FreeCompany dto)
     {
         Active = dto.Active;
         ActiveMemberCount = dto.ActiveMemberCount;
         Crest = dto.Crest;
         Dc = dto.Dc;
-        Estate = new Estate(dto.Estate);
+
+        if (dto.Estate != null)
+        {
+            Estate = new Estate(dto.Estate);
+        }
+
         Focus = dto.Focus.Select(x => new Focus(x)).ToArray();
         Formed = dto.Formed;
         GrandCompany = dto.GrandCompany;
@@ -34,7 +39,7 @@ public class FreeCompany
 
     public string Dc { get; }
 
-    public Estate Estate { get; }
+    public Estate? Estate { get; }
     public Focus[] Focus { get; }
     public int Formed { get; }
     public string GrandCompany { get; }

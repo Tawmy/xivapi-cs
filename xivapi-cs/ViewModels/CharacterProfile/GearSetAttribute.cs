@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GearSetAttribute
 {
-    public GearSetAttribute(DTOs.CharacterProfile.GearSetAttribute dto)
+    internal GearSetAttribute(DTOs.CharacterProfile.GearSetAttribute dto)
     {
         Attribute = new Attribute(dto.Attribute);
         Value = dto.Value;

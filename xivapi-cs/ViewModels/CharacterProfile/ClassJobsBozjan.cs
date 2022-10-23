@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class ClassJobsBozjan
 {
-    public ClassJobsBozjan(DTOs.CharacterProfile.ClassJobsBozjan dto)
+    internal ClassJobsBozjan(DTOs.CharacterProfile.ClassJobsBozjan dto)
     {
         Level = dto.Level;
         Mettle = int.TryParse(dto.Mettle?.ToString(), out var mettle) ? mettle : 0;

@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Estate
 {
-    public Estate(DTOs.CharacterProfile.Estate dto)
+    internal Estate(DTOs.CharacterProfile.Estate dto)
     {
         Greeting = dto.Greeting;
         Name = dto.Name;

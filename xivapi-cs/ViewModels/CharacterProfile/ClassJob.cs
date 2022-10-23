@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class ClassJob : ClassJobBase
 {
-    public ClassJob(DTOs.CharacterProfile.ClassJob dto) : base(dto)
+    internal ClassJob(DTOs.CharacterProfile.ClassJob dto) : base(dto)
     {
         ClassId = dto.ClassId;
         JobId = dto.JobId;

@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GearPiece : GearPieceBase
 {
-    public GearPiece(DTOs.CharacterProfile.GearPiece dto) : base(dto)
+    internal GearPiece(DTOs.CharacterProfile.GearPiece dto) : base(dto)
     {
         Dye = dto.Dye;
         Mirage = dto.Mirage;

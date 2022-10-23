@@ -1,7 +1,7 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class Pet
+internal class Pet
 {
-    public string Icon { get; init; }
-    public string Name { get; init; }
+    public string Icon { get; init; } = null!;
+    public string Name { get; init; } = null!;
 }

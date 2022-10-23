@@ -1,10 +1,10 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class Character : CharacterBase
+internal class Character : CharacterBase
 {
-    public ClassJob ActiveClassJob { get; init; }
-    public ClassJob[] ClassJobs { get; init; }
-    public GearSet GearSet { get; init; }
+    public ClassJob ActiveClassJob { get; init; } = null!;
+    public ClassJob[] ClassJobs { get; init; } = null!;
+    public GearSet GearSet { get; init; } = null!;
     public GrandCompany? GrandCompany { get; init; }
     public int GuardianDeity { get; init; }
     public int Race { get; init; }

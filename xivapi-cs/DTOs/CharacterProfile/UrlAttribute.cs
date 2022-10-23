@@ -1,6 +1,6 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class UrlAttribute : Attribute
+internal class UrlAttribute : Attribute
 {
-    public string Url { get; init; }
+    public string Url { get; init; } = null!;
 }

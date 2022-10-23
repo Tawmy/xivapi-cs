@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class ClassJobBase
 {
-    public ClassJobBase(DTOs.CharacterProfile.ClassJobBase dto)
+    internal ClassJobBase(DTOs.CharacterProfile.ClassJobBase dto)
     {
         ExpLevel = dto.ExpLevel;
         ExpLevelMax = dto.ExpLevelMax;

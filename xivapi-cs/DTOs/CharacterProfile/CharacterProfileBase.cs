@@ -1,6 +1,6 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class CharacterProfileBase
+internal class CharacterProfileBase
 {
     // FR
     public CharacterShort[]? Friends { get; init; }

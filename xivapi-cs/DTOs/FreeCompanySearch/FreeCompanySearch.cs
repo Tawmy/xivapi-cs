@@ -2,6 +2,6 @@ namespace xivapi_cs.DTOs.FreeCompanySearch;
 
 internal class FreeCompanySearch
 {
-    public Pagination Pagination { get; set; }
-    public FreeCompanySearchResult[] Results { get; set; }
+    public Pagination Pagination { get; init; } = null!;
+    public FreeCompanySearchResult[] Results { get; init; } = null!;
 }

@@ -5,7 +5,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 public class CharacterProfile : CharacterProfileBase
 {
     // AC
-    public CharacterProfile(DTOs.CharacterProfile.CharacterProfile dto) : base(dto)
+    internal CharacterProfile(DTOs.CharacterProfile.CharacterProfile dto) : base(dto)
     {
         if (dto.Achievements != null)
         {

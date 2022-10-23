@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GrandCompanyExtended
 {
-    public GrandCompanyExtended(DTOs.CharacterProfile.GrandCompanyExtended dto)
+    internal GrandCompanyExtended(DTOs.CharacterProfile.GrandCompanyExtended dto)
     {
         Company = new UrlAttribute(dto.Company);
         Rank = new IconUrlAttribute(dto.Rank);

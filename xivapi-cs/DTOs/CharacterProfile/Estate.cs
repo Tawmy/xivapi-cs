@@ -1,8 +1,8 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class Estate
+internal class Estate
 {
-    public string Greeting { get; init; }
-    public string Name { get; init; }
-    public string Plot { get; init; }
+    public string Greeting { get; init; } = null!;
+    public string Name { get; init; } = null!;
+    public string Plot { get; init; } = null!;
 }

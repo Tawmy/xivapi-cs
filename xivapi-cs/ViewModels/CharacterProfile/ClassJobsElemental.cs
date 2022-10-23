@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class ClassJobsElemental
 {
-    public ClassJobsElemental(DTOs.CharacterProfile.ClassJobsElemental dto)
+    internal ClassJobsElemental(DTOs.CharacterProfile.ClassJobsElemental dto)
     {
         ExpLevel = dto.ExpLevel;
         ExpLevelMax = dto.ExpLevelMax;

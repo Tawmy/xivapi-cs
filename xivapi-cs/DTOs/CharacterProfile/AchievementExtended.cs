@@ -1,8 +1,8 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class AchievementExtended : Achievement
+internal class AchievementExtended : Achievement
 {
-    public string Icon { get; set; }
-    public string Name { get; set; }
-    public int Points { get; set; }
+    public string Icon { get; init; } = null!;
+    public string Name { get; init; } = null!;
+    public int Points { get; init; }
 }

@@ -1,8 +1,8 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class Seeking
+internal class Seeking
 {
-    public string Icon { get; init; }
-    public string Name { get; init; }
+    public string Icon { get; init; } = null!;
+    public string Name { get; init; } = null!;
     public bool Status { get; init; }
 }

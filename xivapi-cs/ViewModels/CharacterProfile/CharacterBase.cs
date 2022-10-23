@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class CharacterBase : Attribute
 {
-    public CharacterBase(DTOs.CharacterProfile.CharacterBase dto) : base(dto)
+    internal CharacterBase(DTOs.CharacterProfile.CharacterBase dto) : base(dto)
     {
         Avatar = dto.Avatar;
         Bio = dto.Bio;
@@ -29,9 +29,9 @@ public class CharacterBase : Attribute
     public string Dc { get; }
 
     public string? FreeCompanyId { get; }
-    public string FreeCompanyName { get; }
+    public string? FreeCompanyName { get; }
     public int Gender { get; }
-    public dynamic Lang { get; } // no clue, seems to always be null
+    public object? Lang { get; } // no clue, seems to always be null
     public string Nameday { get; }
     public int ParseDate { get; }
     public string Portrait { get; }

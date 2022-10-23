@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Gear
 {
-    public Gear(DTOs.CharacterProfile.Gear dto)
+    internal Gear(DTOs.CharacterProfile.Gear dto)
     {
         if (dto.Body != null)
         {

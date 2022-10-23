@@ -4,7 +4,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GearSetExtended
 {
-    public GearSetExtended(DTOs.CharacterProfile.GearSetExtended dto)
+    internal GearSetExtended(DTOs.CharacterProfile.GearSetExtended dto)
     {
         Attributes = dto.Attributes.Select(x => new GearSetAttribute(x)).ToArray();
         Class = new Job(dto.Class);

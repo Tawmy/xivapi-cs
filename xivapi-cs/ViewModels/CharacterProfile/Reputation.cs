@@ -2,7 +2,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class Reputation
 {
-    public Reputation(DTOs.CharacterProfile.Reputation dto)
+    internal Reputation(DTOs.CharacterProfile.Reputation dto)
     {
         Name = dto.Name;
         Progress = dto.Progress;

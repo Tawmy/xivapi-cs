@@ -1,7 +1,7 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class GearSetAttribute
+internal class GearSetAttribute
 {
-    public Attribute Attribute { get; init; }
+    public Attribute Attribute { get; init; } = null!;
     public int Value { get; init; }
 }

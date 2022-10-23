@@ -6,7 +6,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 public class CharacterProfileBase
 {
     // FR
-    public CharacterProfileBase(DTOs.CharacterProfile.CharacterProfileBase dto)
+    internal CharacterProfileBase(DTOs.CharacterProfile.CharacterProfileBase dto)
     {
         if (dto.Friends != null)
         {

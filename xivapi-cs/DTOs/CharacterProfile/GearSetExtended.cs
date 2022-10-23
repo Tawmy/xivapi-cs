@@ -1,8 +1,8 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class GearSetExtended
+internal class GearSetExtended
 {
-    public GearSetAttribute[] Attributes { get; init; }
-    public Job Class { get; init; } // Job type because no ClassJobCategory from API
-    public GearExtended Gear { get; init; }
+    public GearSetAttribute[] Attributes { get; init; } = null!;
+    public Job Class { get; init; } = null!; // Job type because no ClassJobCategory from API
+    public GearExtended Gear { get; init; } = null!;
 }

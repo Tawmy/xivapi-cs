@@ -4,7 +4,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GuardianDeity : IconUrlAttribute
 {
-    public GuardianDeity(DTOs.CharacterProfile.GuardianDeity dto) : base(dto)
+    internal GuardianDeity(DTOs.CharacterProfile.GuardianDeity dto) : base(dto)
     {
         GuardianDeityChild = dto.GuardianDeityChild;
     }

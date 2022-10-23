@@ -1,6 +1,6 @@
 namespace xivapi_cs.DTOs.CharacterProfile;
 
-public class IconAttribute : Attribute
+internal class IconAttribute : Attribute
 {
-    public string Icon { get; init; }
+    public string Icon { get; init; } = null!;
 }

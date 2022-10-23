@@ -4,7 +4,7 @@ namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GearPieceExtended : GearPieceBase
 {
-    public GearPieceExtended(DTOs.CharacterProfile.GearPieceExtended dto) : base(dto)
+    internal GearPieceExtended(DTOs.CharacterProfile.GearPieceExtended dto) : base(dto)
     {
         if (dto.Dye != null)
         {
