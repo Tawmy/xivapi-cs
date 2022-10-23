@@ -1,8 +1,7 @@
-namespace xivapi_cs.DTOs.LinkshellSearch
+namespace xivapi_cs.DTOs.LinkshellSearch;
+
+internal class LinkshellSearch
 {
-    internal class LinkshellSearch
-    {
-        public Pagination Pagination { get; init; } = null!;
-        public LinkshellSearchResult[] Results { get; init; } = null!;
-    }
+    public Pagination Pagination { get; init; } = null!;
+    public LinkshellSearchResult[] Results { get; init; } = null!;
 }

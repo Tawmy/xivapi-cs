@@ -8,6 +8,6 @@ public class CrossworldProfile : ProfileBase
     {
         DataCenterDetails = new DataCenterDetails(dto.Server);
     }
-    
+
     public DataCenterDetails DataCenterDetails { get; }
 }

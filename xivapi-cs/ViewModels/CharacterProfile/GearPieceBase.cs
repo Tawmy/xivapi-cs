@@ -1,12 +1,11 @@
-namespace xivapi_cs.ViewModels.CharacterProfile
-{
-    public class GearPieceBase
-    {
-        public GearPieceBase(DTOs.CharacterProfile.GearPieceBase dto)
-        {
-            Creator = dto.Creator;
-        }
+namespace xivapi_cs.ViewModels.CharacterProfile;
 
-        public dynamic Creator { get; } // no clue, seems to always be null
+public class GearPieceBase
+{
+    public GearPieceBase(DTOs.CharacterProfile.GearPieceBase dto)
+    {
+        Creator = dto.Creator;
     }
+
+    public dynamic Creator { get; } // no clue, seems to always be null
 }

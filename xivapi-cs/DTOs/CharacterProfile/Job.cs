@@ -1,7 +1,6 @@
-namespace xivapi_cs.DTOs.CharacterProfile
+namespace xivapi_cs.DTOs.CharacterProfile;
+
+public class Job : IconUrlAttribute
 {
-    public class Job : IconUrlAttribute
-    {
-        public string Abbreviation { get; init; }
-    }
+    public string Abbreviation { get; init; }
 }

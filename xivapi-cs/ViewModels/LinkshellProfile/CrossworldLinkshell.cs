@@ -8,7 +8,6 @@ public class CrossworldLinkshell
     {
         CrossworldLinkshellProfile = new CrossworldLinkshellProfile(dto.LinkshellProfile);
     }
-    
-    [JsonPropertyName("Linkshell")]
-    public CrossworldLinkshellProfile CrossworldLinkshellProfile { get; }
+
+    [JsonPropertyName("Linkshell")] public CrossworldLinkshellProfile CrossworldLinkshellProfile { get; }
 }

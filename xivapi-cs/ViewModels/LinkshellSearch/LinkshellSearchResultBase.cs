@@ -8,7 +8,7 @@ public class LinkshellSearchResultBase
         Name = dto.Name;
         Crest = dto.Crest;
     }
-        
+
     public string Id { get; }
     public string Name { get; }
     public string[] Crest { get; }

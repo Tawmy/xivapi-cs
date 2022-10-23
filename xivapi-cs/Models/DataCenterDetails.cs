@@ -15,7 +15,7 @@ public class DataCenterDetails
     {
         DataCenterLogical = dataCenterLogical;
     }
-    
+
     public DataCenterLogical DataCenterLogical { get; }
     public DataCenterPhysical DataCenterPhysical => DataCenterLogical.GetDataCenterPhysical();
 

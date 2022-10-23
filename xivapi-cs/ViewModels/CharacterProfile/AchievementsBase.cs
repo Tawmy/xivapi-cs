@@ -1,12 +1,11 @@
-namespace xivapi_cs.ViewModels.CharacterProfile
-{
-    public class AchievementsBase
-    {
-        public AchievementsBase(DTOs.CharacterProfile.AchievementsBase dto)
-        {
-            Points = dto.Points;
-        }
+namespace xivapi_cs.ViewModels.CharacterProfile;
 
-        public int Points { get; }
+public class AchievementsBase
+{
+    public AchievementsBase(DTOs.CharacterProfile.AchievementsBase dto)
+    {
+        Points = dto.Points;
     }
+
+    public int Points { get; }
 }

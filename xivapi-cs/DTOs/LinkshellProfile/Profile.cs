@@ -1,8 +1,7 @@
-namespace xivapi_cs.DTOs.LinkshellProfile
+namespace xivapi_cs.DTOs.LinkshellProfile;
+
+internal class Profile
 {
-    internal class Profile
-    {
-        public string Name { get; init; }
-        public string Server { get; init; }
-    }
+    public string Name { get; init; }
+    public string Server { get; init; }
 }

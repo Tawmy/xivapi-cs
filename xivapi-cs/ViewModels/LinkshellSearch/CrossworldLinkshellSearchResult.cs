@@ -8,6 +8,6 @@ public class CrossworldLinkshellSearchResult : LinkshellSearchResultBase
     {
         DataCenterDetails = new DataCenterDetails(dto.Server);
     }
-    
+
     public DataCenterDetails DataCenterDetails { get; }
 }

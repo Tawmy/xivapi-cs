@@ -11,7 +11,7 @@ public enum HomeWorld
     Ragnarok,
     Sagittarius,
     Spriggan,
-    
+
     // Light
     Alpha,
     Lich,
@@ -21,14 +21,14 @@ public enum HomeWorld
     Shiva,
     Twintania,
     Zodiark,
-    
+
     // Materia
     Bismarck,
     Ravana,
     Sephirot,
     Sophia,
     Zurvan,
-    
+
     // Aether
     Adamantoise,
     Cactuar,
@@ -38,7 +38,7 @@ public enum HomeWorld
     Midgardsormr,
     Sargatanas,
     Siren,
-    
+
     // Crystal
     Balmung,
     Brynhildr,
@@ -48,7 +48,7 @@ public enum HomeWorld
     Malboro,
     Mateus,
     Zalera,
-    
+
     // Primal
     Behemoth,
     Excalibur,
@@ -58,7 +58,7 @@ public enum HomeWorld
     Lamia,
     Leviathan,
     Ultros,
-    
+
     // Elemental
     Aegis,
     Atomos,
@@ -68,7 +68,7 @@ public enum HomeWorld
     Kujata,
     Tonberry,
     Typhon,
-    
+
     // Gaia
     Alexander,
     Bahamut,
@@ -78,7 +78,7 @@ public enum HomeWorld
     Ridill,
     Tiamat,
     Ultima,
-    
+
     // Mana
     Anima,
     Asura,
@@ -88,7 +88,7 @@ public enum HomeWorld
     Masamune,
     Pandaemonium,
     Titan,
-    
+
     // Meteor
     Belias,
     Mandragora,

@@ -1,8 +1,7 @@
-namespace xivapi_cs.DTOs.CharacterSearch
+namespace xivapi_cs.DTOs.CharacterSearch;
+
+internal class CharacterSearch
 {
-    internal class CharacterSearch
-    {
-        public Pagination Pagination { get; init; } = null!;
-        public CharacterSearchResult[] Results { get; init; } = null!;
-    }
+    public Pagination Pagination { get; init; } = null!;
+    public CharacterSearchResult[] Results { get; init; } = null!;
 }

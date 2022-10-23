@@ -1,8 +1,7 @@
-namespace xivapi_cs.DTOs.FreeCompanySearch
+namespace xivapi_cs.DTOs.FreeCompanySearch;
+
+internal class FreeCompanySearch
 {
-    internal class FreeCompanySearch
-    {
-        public Pagination Pagination { get; set; }
-        public FreeCompanySearchResult[] Results { get; set; }
-    }
+    public Pagination Pagination { get; set; }
+    public FreeCompanySearchResult[] Results { get; set; }
 }

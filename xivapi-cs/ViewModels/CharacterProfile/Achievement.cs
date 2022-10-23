@@ -1,14 +1,15 @@
-namespace xivapi_cs.ViewModels.CharacterProfile
-{
-    public class Achievement
-    {
-        public Achievement(DTOs.CharacterProfile.Achievement dto)
-        {
-            Date = dto.Date;
-            Id = dto.Id;
-        }
+using System;
 
-        public int Date { get; }   // TODO make this datetime?
-        public int Id { get; }
+namespace xivapi_cs.ViewModels.CharacterProfile;
+
+public class Achievement
+{
+    internal Achievement(DTOs.CharacterProfile.Achievement dto)
+    {
+        Date = DateTimeOffset.FromUnixTimeSeconds(dto.Date).UtcDateTime;
+        Id = dto.Id;
     }
+
+    public DateTime Date { get; } // UTC
+    public int Id { get; }
 }
