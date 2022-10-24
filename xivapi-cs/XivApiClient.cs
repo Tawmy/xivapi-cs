@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
-using xivapi_cs.Models;
+using xivapi_cs.Enums;
 using xivapi_cs.ViewModels.CharacterProfile;
 using xivapi_cs.ViewModels.CharacterSearch;
 using xivapi_cs.ViewModels.FreeCompanyProfile;
@@ -169,38 +169,33 @@ public class XivApiClient
         return des != null ? new CharacterSearch(des) : null;
     }
 
-    public async Task<CharacterProfile?> CharacterProfile(int id)
-    {
-        return await CharacterProfile(id, new CharacterProfileOptions());
-    }
-
     public async Task<CharacterProfile?> CharacterProfile(int id, CharacterProfileOptions options)
     {
         var req = new RestRequest($"character/{id}");
 
         var fetch = new List<string>();
 
-        if (options.FetchAchievements)
+        if (options.HasFlag(CharacterProfileOptions.Achievements))
         {
             fetch.Add("AC");
         }
 
-        if (options.FetchFriends)
+        if (options.HasFlag(CharacterProfileOptions.Friends))
         {
             fetch.Add("FR");
         }
 
-        if (options.FetchFreeCompany)
+        if (options.HasFlag(CharacterProfileOptions.FreeCompany))
         {
             fetch.Add("FC");
         }
 
-        if (options.FetchFreeCompanyMembers)
+        if (options.HasFlag(CharacterProfileOptions.FreeCompanyMembers))
         {
             fetch.Add("FCM");
         }
 
-        if (options.FetchMinionsMounts)
+        if (options.HasFlag(CharacterProfileOptions.MinionsMounts))
         {
             fetch.Add("MIMO");
         }
@@ -215,38 +210,33 @@ public class XivApiClient
         return des != null ? new CharacterProfile(des) : null;
     }
 
-    public async Task<CharacterProfileExtended?> CharacterProfileExtended(int id)
-    {
-        return await CharacterProfileExtended(id, new CharacterProfileOptions());
-    }
-
     public async Task<CharacterProfileExtended?> CharacterProfileExtended(int id, CharacterProfileOptions options)
     {
         var req = new RestRequest($"character/{id}");
 
         var fetch = new List<string>();
 
-        if (options.FetchAchievements)
+        if (options.HasFlag(CharacterProfileOptions.Achievements))
         {
             fetch.Add("AC");
         }
 
-        if (options.FetchFriends)
+        if (options.HasFlag(CharacterProfileOptions.Friends))
         {
             fetch.Add("FR");
         }
 
-        if (options.FetchFreeCompany)
+        if (options.HasFlag(CharacterProfileOptions.FreeCompany))
         {
             fetch.Add("FC");
         }
 
-        if (options.FetchFreeCompanyMembers)
+        if (options.HasFlag(CharacterProfileOptions.FreeCompanyMembers))
         {
             fetch.Add("FCM");
         }
 
-        if (options.FetchMinionsMounts)
+        if (options.HasFlag(CharacterProfileOptions.MinionsMounts))
         {
             fetch.Add("MIMO");
         }

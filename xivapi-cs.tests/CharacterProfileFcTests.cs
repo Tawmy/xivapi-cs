@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using NUnit.Framework;
-using xivapi_cs.Models;
+using xivapi_cs.Enums;
 
 namespace xivapi_cs.tests;
 
@@ -10,7 +10,7 @@ public class CharacterProfileFcTests
     public async Task GetAlyx()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28812634, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(28812634, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -22,7 +22,7 @@ public class CharacterProfileFcTests
     public async Task GetLisa()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(32691240, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(32691240, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -34,7 +34,7 @@ public class CharacterProfileFcTests
     public async Task GetHalvar()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28915387, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(28915387, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -46,7 +46,7 @@ public class CharacterProfileFcTests
     public async Task GetFuoca()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(21201379, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(21201379, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -58,7 +58,7 @@ public class CharacterProfileFcTests
     public async Task GetHena()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28835226, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(28835226, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         Assert.IsNull(result.Character.FreeCompanyId);
         Assert.IsNull(result.FreeCompany);
@@ -68,7 +68,7 @@ public class CharacterProfileFcTests
     public async Task GetAlavel()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(30410250, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(30410250, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -80,7 +80,7 @@ public class CharacterProfileFcTests
     public async Task GetEbih()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28025341, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(28025341, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -92,7 +92,7 @@ public class CharacterProfileFcTests
     public async Task GetGenryu()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(3435267, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(3435267, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -104,7 +104,7 @@ public class CharacterProfileFcTests
     public async Task GetKukuri()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(13951694, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(13951694, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
@@ -116,7 +116,7 @@ public class CharacterProfileFcTests
     public async Task GetOne()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28834908, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(28834908, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         Assert.IsNull(result.Character.FreeCompanyId);
         Assert.IsNull(result.FreeCompany);
@@ -126,7 +126,7 @@ public class CharacterProfileFcTests
     public async Task GetRhayn()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(18188832, new CharacterProfileOptions(fetchFreeCompany: true));
+        var result = await client.CharacterProfile(18188832, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
