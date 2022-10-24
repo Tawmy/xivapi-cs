@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using NUnit.Framework;
+using xivapi_cs.Models;
 
 namespace xivapi_cs.tests;
 
@@ -9,7 +10,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetAlyx()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28812634, true);
+        var result = await client.CharacterProfile(28812634, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -22,7 +23,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetLisa()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(32691240, true);
+        var result = await client.CharacterProfile(32691240, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -35,7 +36,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetHalvar()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28915387, true);
+        var result = await client.CharacterProfile(28915387, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -48,7 +49,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetFuoca()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(21201379, true);
+        var result = await client.CharacterProfile(21201379, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -61,7 +62,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetHena()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28835226, true);
+        var result = await client.CharacterProfile(28835226, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -74,7 +75,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetAlavel()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(30410250, true);
+        var result = await client.CharacterProfile(30410250, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -87,7 +88,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetEbih()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28025341, true);
+        var result = await client.CharacterProfile(28025341, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -100,7 +101,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetGenryu()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(3435267, true);
+        var result = await client.CharacterProfile(3435267, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -113,7 +114,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetKukuri()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(13951694, true);
+        var result = await client.CharacterProfile(13951694, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -126,7 +127,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetOne()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(28834908, true);
+        var result = await client.CharacterProfile(28834908, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {
@@ -139,7 +140,7 @@ public class CharacterProfileAchievementsTests
     public async Task GetRhayn()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(18188832, true);
+        var result = await client.CharacterProfile(18188832, new CharacterProfileOptions(true));
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {

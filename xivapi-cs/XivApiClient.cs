@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
+using xivapi_cs.Models;
 using xivapi_cs.ViewModels.CharacterProfile;
 using xivapi_cs.ViewModels.CharacterSearch;
 using xivapi_cs.ViewModels.FreeCompanyProfile;
@@ -168,37 +169,38 @@ public class XivApiClient
         return des != null ? new CharacterSearch(des) : null;
     }
 
-    public async Task<CharacterProfile?> CharacterProfile(int id,
-        bool fetchAchievements = false,
-        bool fetchFriends = false,
-        bool fetchFreeCompany = false,
-        bool fetchFreeCompanyMembers = false,
-        bool fetchMinionsMounts = false)
+    public async Task<CharacterProfile?> CharacterProfile(int id)
+    {
+        return await CharacterProfile(id, new CharacterProfileOptions());
+    }
+
+    public async Task<CharacterProfile?> CharacterProfile(int id, CharacterProfileOptions options)
     {
         var req = new RestRequest($"character/{id}");
 
         var fetch = new List<string>();
-        if (fetchAchievements)
+
+        if (options.FetchAchievements)
         {
             fetch.Add("AC");
         }
 
-        if (fetchFriends)
+        if (options.FetchFriends)
         {
             fetch.Add("FR");
         }
 
-        if (fetchFreeCompany)
+        if (options.FetchFreeCompany)
         {
             fetch.Add("FC");
         }
 
-        if (fetchFreeCompanyMembers)
+        if (options.FetchFreeCompanyMembers)
         {
             fetch.Add("FCM");
         }
 
-        if (fetchMinionsMounts)
+        if (options.FetchMinionsMounts)
         {
             fetch.Add("MIMO");
         }
@@ -213,37 +215,38 @@ public class XivApiClient
         return des != null ? new CharacterProfile(des) : null;
     }
 
-    public async Task<CharacterProfileExtended?> CharacterProfileExtended(int id,
-        bool fetchAchievements = false,
-        bool fetchFriends = false,
-        bool fetchFreeCompany = false,
-        bool fetchFreeCompanyMembers = false,
-        bool fetchMinionsMounts = false)
+    public async Task<CharacterProfileExtended?> CharacterProfileExtended(int id)
+    {
+        return await CharacterProfileExtended(id, new CharacterProfileOptions());
+    }
+
+    public async Task<CharacterProfileExtended?> CharacterProfileExtended(int id, CharacterProfileOptions options)
     {
         var req = new RestRequest($"character/{id}");
 
         var fetch = new List<string>();
-        if (fetchAchievements)
+
+        if (options.FetchAchievements)
         {
             fetch.Add("AC");
         }
 
-        if (fetchFriends)
+        if (options.FetchFriends)
         {
             fetch.Add("FR");
         }
 
-        if (fetchFreeCompany)
+        if (options.FetchFreeCompany)
         {
             fetch.Add("FC");
         }
 
-        if (fetchFreeCompanyMembers)
+        if (options.FetchFreeCompanyMembers)
         {
             fetch.Add("FCM");
         }
 
-        if (fetchMinionsMounts)
+        if (options.FetchMinionsMounts)
         {
             fetch.Add("MIMO");
         }

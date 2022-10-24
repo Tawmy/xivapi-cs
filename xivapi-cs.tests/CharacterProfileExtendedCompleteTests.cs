@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using NUnit.Framework;
+using xivapi_cs.Models;
 
 namespace xivapi_cs.tests;
 
@@ -9,7 +10,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetAlyx()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(28812634, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(28812634, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -42,7 +44,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetLisa()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(32691240, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(32691240, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -75,7 +78,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetHalvar()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(28915387, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(28915387, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -108,7 +112,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetFuoca()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(21201379, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(21201379, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -141,7 +146,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetHena()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(28835226, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(28835226, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -174,7 +180,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetAlavel()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(30410250, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(30410250, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -207,7 +214,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetEbih()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(28025341, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(28025341, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -240,7 +248,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetGenryu()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(3435267, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(3435267, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -273,7 +282,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetKukuri()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(13951694, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(13951694, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -306,7 +316,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetOne()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(28834908, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(28834908, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
@@ -339,7 +350,8 @@ public class CharacterProfileExtendedCompleteTests
     public async Task GetRhayn()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfileExtended(18188832, true, true, true, true, true);
+        var result =
+            await client.CharacterProfileExtended(18188832, new CharacterProfileOptions(true, true, true, true, true));
         Assert.IsNotNull(result);
 
         if (result.AchievementsPublic)
