@@ -36,15 +36,69 @@ public class XivApiClient
         throw new ArgumentException("Invalid server");
     }
 
-    #region Linkshell
+    #region Free Company Profile
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, string? server = null, int? page = null)
+    public async Task<FreeCompanyProfile?> FreeCompanyProfile(string id, bool fetchMembers)
+    {
+        var req = new RestRequest($"freecompany/{id}");
+
+        var fetch = new List<string>();
+        if (fetchMembers)
+        {
+            fetch.Add("FCM");
+        }
+
+        if (fetch.Count > 0)
+        {
+            req.AddParameter("data", string.Join(",", fetch));
+        }
+
+        var resp = await _client.ExecuteGetAsync(req);
+        var des = JsonSerializer.Deserialize<DTOs.FreeCompanyProfile.FreeCompanyProfile>(resp.Content);
+        return des != null ? new FreeCompanyProfile(des) : null;
+    }
+
+    #endregion
+
+    #region Linkshell Search
+
+    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name)
+    {
+        return await LinkshellSearchRegularInternal(name, null, null);
+    }
+
+    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, string server)
+    {
+        return await LinkshellSearchRegularInternal(name, server, null);
+    }
+
+    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, string server, int page)
+    {
+        return await LinkshellSearchRegularInternal(name, server, page);
+    }
+
+    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, int page)
+    {
+        return await LinkshellSearchRegularInternal(name, null, page);
+    }
+
+    public async Task<LinkshellSearch?> LinkshellSearchRegularInternal(string name, string? server, int? page)
     {
         var res = await LinkshellSearch("linkshell/search", name, server, page);
         return res != null ? new LinkshellSearch(res) : null;
     }
 
-    public async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworld(string name, int? page = null)
+    public async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworld(string name)
+    {
+        return await LinkshellSearchCrossworldInternal(name, null);
+    }
+
+    public async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworld(string name, int page)
+    {
+        return await LinkshellSearchCrossworldInternal(name, null);
+    }
+
+    private async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworldInternal(string name, int? page)
     {
         var res = await LinkshellSearch("linkshell/crossworld/search", name, null, page);
         return res != null ? new CrossworldLinkshellSearch(res) : null;
@@ -73,13 +127,37 @@ public class XivApiClient
         return JsonSerializer.Deserialize<DTOs.LinkshellSearch.LinkshellSearch>(resp.Content);
     }
 
-    public async Task<Linkshell?> LinkshellProfileRegular(string id, int? page = null)
+    #endregion
+
+    #region Linkshell Profile
+
+    public async Task<Linkshell?> LinkshellProfileRegular(string id)
+    {
+        return await LinkshellProfileRegularInternal(id, null);
+    }
+
+    public async Task<Linkshell?> LinkshellProfileRegular(string id, int page)
+    {
+        return await LinkshellProfileRegularInternal(id, page);
+    }
+
+    private async Task<Linkshell?> LinkshellProfileRegularInternal(string id, int? page)
     {
         var res = await LinkshellProfile($"linkshell/{id}", page);
         return res != null ? new Linkshell(res) : null;
     }
 
-    public async Task<CrossworldLinkshell?> LinkshellProfileCrossworld(string id, int? page = null)
+    public async Task<CrossworldLinkshell?> LinkshellProfileCrossworld(string id)
+    {
+        return await LinkshellProfileCrossworldInternal(id, null);
+    }
+
+    public async Task<CrossworldLinkshell?> LinkshellProfileCrossworld(string id, int page)
+    {
+        return await LinkshellProfileCrossworldInternal(id, page);
+    }
+
+    private async Task<CrossworldLinkshell?> LinkshellProfileCrossworldInternal(string id, int? page)
     {
         var res = await LinkshellProfile($"linkshell/crossworld/{id}", page);
         return res != null ? new CrossworldLinkshell(res) : null;
@@ -99,9 +177,29 @@ public class XivApiClient
 
     #endregion
 
-    #region Free Company
+    #region Free Company Search
 
-    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, string? server = null, int? page = null)
+    public async Task<FreeCompanySearch?> FreeCompanySearch(string name)
+    {
+        return await FreeCompanySearchInternal(name, null, null);
+    }
+
+    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, string server)
+    {
+        return await FreeCompanySearchInternal(name, server, null);
+    }
+
+    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, string server, int page)
+    {
+        return await FreeCompanySearchInternal(name, server, page);
+    }
+
+    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, int page)
+    {
+        return await FreeCompanySearchInternal(name, null, page);
+    }
+
+    private async Task<FreeCompanySearch?> FreeCompanySearchInternal(string name, string? server, int? page)
     {
         var req = new RestRequest("freecompany/search");
         req.AddParameter("name", name);
@@ -123,31 +221,31 @@ public class XivApiClient
         return des != null ? new FreeCompanySearch(des) : null;
     }
 
-    public async Task<FreeCompanyProfile?> FreeCompanyProfile(string id, bool fetchMembers = false)
-    {
-        var req = new RestRequest($"freecompany/{id}");
-
-        var fetch = new List<string>();
-        if (fetchMembers)
-        {
-            fetch.Add("FCM");
-        }
-
-        if (fetch.Count > 0)
-        {
-            req.AddParameter("data", string.Join(",", fetch));
-        }
-
-        var resp = await _client.ExecuteGetAsync(req);
-        var des = JsonSerializer.Deserialize<DTOs.FreeCompanyProfile.FreeCompanyProfile>(resp.Content);
-        return des != null ? new FreeCompanyProfile(des) : null;
-    }
-
     #endregion
 
-    #region Character
+    #region Character Search
 
-    public async Task<CharacterSearch?> CharacterSearch(string name, string? server = null, int? page = null)
+    public async Task<CharacterSearch?> CharacterSearch(string name)
+    {
+        return await CharacterSearchInternal(name, null, null);
+    }
+
+    public async Task<CharacterSearch?> CharacterSearch(string name, string server)
+    {
+        return await CharacterSearchInternal(name, server, null);
+    }
+
+    public async Task<CharacterSearch?> CharacterSearch(string name, string server, int page)
+    {
+        return await CharacterSearchInternal(name, server, page);
+    }
+
+    public async Task<CharacterSearch?> CharacterSearch(string name, int page)
+    {
+        return await CharacterSearchInternal(name, null, page);
+    }
+
+    private async Task<CharacterSearch?> CharacterSearchInternal(string name, string? server, int? page)
     {
         var req = new RestRequest("character/search");
         req.AddParameter("name", name);
@@ -168,6 +266,10 @@ public class XivApiClient
         var des = JsonSerializer.Deserialize<DTOs.CharacterSearch.CharacterSearch>(resp.Content);
         return des != null ? new CharacterSearch(des) : null;
     }
+
+    #endregion
+
+    #region Character Profile
 
     public async Task<CharacterProfile?> CharacterProfile(int id, CharacterProfileOptions options)
     {
