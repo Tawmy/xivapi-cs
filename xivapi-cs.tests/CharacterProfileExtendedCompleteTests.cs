@@ -34,10 +34,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -73,10 +69,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -112,10 +104,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -151,10 +139,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -190,10 +174,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -229,10 +209,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -268,10 +244,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -307,10 +279,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -346,10 +314,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -385,10 +349,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
@@ -424,10 +384,6 @@ public class CharacterProfileExtendedCompleteTests
         if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
         {
             Assert.IsNotNull(result.FreeCompany);
-        }
-
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
 
