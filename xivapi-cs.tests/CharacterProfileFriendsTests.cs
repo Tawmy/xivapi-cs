@@ -1,168 +1,151 @@
 using System.Threading.Tasks;
 using NUnit.Framework;
+using xivapi_cs.Enums;
 
-namespace xivapi_cs.tests
+namespace xivapi_cs.tests;
+
+public class CharacterProfileFriendsTests
 {
-    public class CharacterProfileFriendsTests
+    [Test]
+    public async Task GetAlyx()
     {
-        /*
-         * These tests are currently not passing. It seems there's a bug in either XIVAPI or Lodestone itself.
-         * FriendsPublic is null when achievements are not requested in addition to friends, for some reason.
-         * Even when FriendsPublic is true, the list itself still seems to be empty for some people.
-         */
-
-        [Test]
-        public async Task GetAlyx()
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(28812634, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(28812634, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetLisa()
+    [Test]
+    public async Task GetLisa()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(32691240, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(32691240, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetHalvar()
+    [Test]
+    public async Task GetHalvar()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(28915387, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(28915387, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetFuoca()
+    [Test]
+    public async Task GetFuoca()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(21201379, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(21201379, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetHena()
+    [Test]
+    public async Task GetHena()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(28835226, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(28835226, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetAlavel()
+    [Test]
+    public async Task GetFizz()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(8696725, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(30410250, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetEbih()
+    [Test]
+    public async Task GetEbih()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(28025341, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(28025341, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetGenryu()
+    [Test]
+    public async Task GetGenryu()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(3435267, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(3435267, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetKukuri()
+    [Test]
+    public async Task GetKukuri()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(13951694, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(13951694, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetOne()
+    [Test]
+    public async Task GetOne()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(28834908, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(28834908, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
+    }
 
-        [Test]
-        public async Task GetRhayn()
+    [Test]
+    public async Task GetRhayn()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(18188832, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        if (result.FriendsPublic)
         {
-            var client = new XivApiClient();
-            var result = await client.CharacterProfile(18188832, fetchFriends: true);
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.FriendsPublic);
-            if (result.FriendsPublic.Value)
-            {
-                Assert.IsNotNull(result.Friends);
-                Assert.Greater(result.Friends.Length, 0);
-            }
+            Assert.IsNotNull(result.Friends);
+            Assert.Greater(result.Friends.Length, 0);
         }
     }
 }
