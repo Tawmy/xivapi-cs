@@ -9,96 +9,67 @@ public class GetCharacterTests
     [Test]
     public async Task GetAlyx()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28812634, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(28812634);
     }
 
     [Test]
     public async Task GetLisa()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(32691240, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(32691240);
     }
 
     [Test]
     public async Task GetHalvar()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28915387, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(28915387);
     }
 
     [Test]
     public async Task GetFuoca()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(21201379, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(21201379);
     }
 
     [Test]
     public async Task GetHena()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28835226, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
-    }
-
-    [Test]
-    public async Task GetAlavel()
-    {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(30410250, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(28835226);
     }
 
     [Test]
     public async Task GetEbih()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28025341, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(28025341);
     }
 
     [Test]
     public async Task GetGenryu()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(3435267, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
-    }
-
-    [Test]
-    public async Task GetKukuri()
-    {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(13951694, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(3435267);
     }
 
     [Test]
     public async Task GetOne()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28834908, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(28834908);
     }
 
     [Test]
     public async Task GetRhayn()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(18188832, CharacterProfileOptions.None);
-        Assert.IsNotNull(result);
+        await TestProfile(18188832);
     }
     
     [Test]
     public async Task GetTestMax()
     {
+        await TestProfile(45386124);
+    }
+
+    private async Task TestProfile(int id)
+    {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(45386124, CharacterProfileOptions.None);
+        var result = await client.CharacterProfile(id, CharacterProfileOptions.None);
         Assert.IsNotNull(result);
     }
 }

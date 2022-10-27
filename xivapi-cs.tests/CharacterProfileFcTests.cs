@@ -9,137 +9,78 @@ public class CharacterProfileFcTests
     [Test]
     public async Task GetAlyx()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28812634, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(28812634, true);
     }
 
     [Test]
     public async Task GetLisa()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(32691240, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(32691240, true);
     }
 
     [Test]
     public async Task GetHalvar()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28915387, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(28915387, true);
     }
 
     [Test]
     public async Task GetFuoca()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(21201379, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(21201379, true);
     }
 
     [Test]
     public async Task GetHena()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28835226, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        Assert.IsNull(result.Character.FreeCompanyId);
-        Assert.IsNull(result.FreeCompany);
-    }
-
-    [Test]
-    public async Task GetAlavel()
-    {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(30410250, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(28835226, false);
     }
 
     [Test]
     public async Task GetEbih()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28025341, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(28025341, true);
     }
 
     [Test]
     public async Task GetGenryu()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(3435267, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
-    }
-
-    [Test]
-    public async Task GetKukuri()
-    {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(13951694, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(3435267, true);
     }
 
     [Test]
     public async Task GetOne()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28834908, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        Assert.IsNull(result.Character.FreeCompanyId);
-        Assert.IsNull(result.FreeCompany);
+        await TestFc(28834908, false);
     }
 
     [Test]
     public async Task GetRhayn()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(18188832, CharacterProfileOptions.FreeCompany);
-        Assert.IsNotNull(result);
-        if (!string.IsNullOrWhiteSpace(result.Character.FreeCompanyId))
-        {
-            Assert.IsNotNull(result.FreeCompany);
-        }
+        await TestFc(18188832, true);
     }
     
     [Test]
     public async Task GetTestMax()
     {
+        await TestFc(45386124, false);
+    }
+
+    private async Task TestFc(int id, bool hasFc)
+    {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(45386124, CharacterProfileOptions.FreeCompany);
+        var result = await client.CharacterProfile(id, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
-        Assert.IsNull(result.FreeCompany);
+
+        if (hasFc)
+        {
+            Assert.IsNotNull(result.Character.FreeCompanyId);
+            Assert.IsNotNull(result.FreeCompany);
+        }
+        else
+        {
+            Assert.IsNull(result.Character.FreeCompanyId);
+            Assert.IsNull(result.FreeCompany);
+        }
     }
 }

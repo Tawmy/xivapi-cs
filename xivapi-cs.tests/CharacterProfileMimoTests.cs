@@ -9,110 +9,79 @@ public class CharacterProfileMimoTests
     [Test]
     public async Task GetAlyx()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28812634, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(28812634);
     }
 
     [Test]
     public async Task GetLisa()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(32691240, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(32691240);
     }
 
     [Test]
     public async Task GetHalvar()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28915387, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(28915387);
     }
 
     [Test]
     public async Task GetFuoca()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(21201379, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
-    }
-
-    [Test]
-    public async Task GetAlavel()
-    {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(30410250, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(21201379);
     }
 
     [Test]
     public async Task GetEbih()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28025341, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(28025341);
     }
 
     [Test]
     public async Task GetGenryu()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(3435267, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
-    }
-
-    [Test]
-    public async Task GetKukuri()
-    {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(13951694, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(3435267);
     }
 
     [Test]
     public async Task GetOne()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(28834908, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(28834908);
     }
 
     [Test]
     public async Task GetRhayn()
     {
-        var client = new XivApiClient();
-        var result = await client.CharacterProfile(18188832, CharacterProfileOptions.MinionsMounts);
-        Assert.IsNotNull(result);
-        Assert.IsNotEmpty(result.Minions);
-        Assert.IsNotEmpty(result.Mounts);
+        await TestMimo(18188832);
     }
     
     [Test]
     public async Task GetTestMax()
     {
+        await TestMimo(45386124, false, false);
+    }
+
+    private async Task TestMimo(int id, bool hasMinions = true, bool hasMounts = true)
+    {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(45386124, CharacterProfileOptions.MinionsMounts);
+        var result = await client.CharacterProfile(id, CharacterProfileOptions.MinionsMounts);
         Assert.IsNotNull(result);
-        Assert.IsEmpty(result.Minions);
-        Assert.IsEmpty(result.Mounts);
+        
+        if (hasMinions)
+        {
+            Assert.IsNotEmpty(result.Minions);
+        }
+        else
+        {
+            Assert.IsEmpty(result.Minions);
+        }
+
+        if (hasMounts)
+        {
+            Assert.IsNotEmpty(result.Mounts);
+        }
+        else
+        {
+            Assert.IsEmpty(result.Mounts);
+        }
     }
 }
