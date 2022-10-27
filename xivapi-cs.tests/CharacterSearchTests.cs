@@ -88,4 +88,22 @@ public class CharacterSearchTests
         Assert.Greater(result2.Results.Length, 0);
         Assert.AreNotEqual(result.Results, result2.Results);
     }
+    
+    [Test]
+    public async Task SearchTestMax()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterSearch("Testerinus Maximus", "Twintania");
+        Assert.IsNotNull(result);
+        Assert.Greater(result.Results.Length, 0);
+    }
+    
+    [Test]
+    public async Task SearchTestMin()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterSearch("Testerinus Minimus");
+        Assert.IsNotNull(result);
+        Assert.AreEqual(0, 0);
+    }
 }

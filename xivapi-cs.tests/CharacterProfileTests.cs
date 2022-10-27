@@ -93,4 +93,12 @@ public class GetCharacterTests
         var result = await client.CharacterProfile(18188832, CharacterProfileOptions.None);
         Assert.IsNotNull(result);
     }
+    
+    [Test]
+    public async Task GetTestMax()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(45386124, CharacterProfileOptions.None);
+        Assert.IsNotNull(result);
+    }
 }

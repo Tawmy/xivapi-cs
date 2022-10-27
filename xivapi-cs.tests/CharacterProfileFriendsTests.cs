@@ -148,4 +148,13 @@ public class CharacterProfileFriendsTests
             Assert.Greater(result.Friends.Length, 0);
         }
     }
+    
+    [Test]
+    public async Task GetTestMax()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(45386124, CharacterProfileOptions.Friends);
+        Assert.IsNotNull(result);
+        Assert.IsEmpty(result.Friends);
+    }
 }

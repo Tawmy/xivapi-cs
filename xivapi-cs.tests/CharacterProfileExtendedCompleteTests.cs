@@ -390,4 +390,35 @@ public class CharacterProfileExtendedCompleteTests
         Assert.IsNotNull(result.Minions);
         Assert.IsNotNull(result.Mounts);
     }
+    
+    [Test]
+    public async Task GetTestMax()
+    {
+        var client = new XivApiClient();
+        var result =
+            await client.CharacterProfileExtended(45386124,
+                CharacterProfileOptions.Achievements |
+                CharacterProfileOptions.Friends |
+                CharacterProfileOptions.FreeCompany |
+                CharacterProfileOptions.FreeCompanyMembers |
+                CharacterProfileOptions.MinionsMounts);
+        Assert.IsNotNull(result);
+
+        if (result.AchievementsPublic)
+        {
+            Assert.IsNotNull(result.Achievements);
+            Assert.IsNotEmpty(result.Achievements.List);
+        }
+
+        if (result.FriendsPublic)
+        {
+            Assert.IsNotNull(result.Friends);
+            Assert.IsNotEmpty(result.Friends);
+        }
+
+        Assert.IsNull(result.Character.FreeCompanyId);
+
+        Assert.IsEmpty(result.Minions);
+        Assert.IsEmpty(result.Mounts);
+    }
 }

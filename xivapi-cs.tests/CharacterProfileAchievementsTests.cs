@@ -148,4 +148,17 @@ public class CharacterProfileAchievementsTests
             Assert.Greater(result.Achievements.List.Length, 0);
         }
     }
+    
+    [Test]
+    public async Task GetTestMax()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(45386124, CharacterProfileOptions.Achievements);
+        Assert.IsNotNull(result);
+        if (result.AchievementsPublic)
+        {
+            Assert.IsNotNull(result.Achievements);
+            Assert.Greater(result.Achievements.List.Length, 0);
+        }
+    }
 }
