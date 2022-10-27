@@ -37,7 +37,7 @@ public class FreeCompanySearchTests
     {
         var client = new XivApiClient();
         var result = await client.FreeCompanySearch("Guild");
-        var result2 = await client.FreeCompanySearch("Guild", page: 2);
+        var result2 = await client.FreeCompanySearch("Guild", 2);
         Assert.IsNotNull(result);
         Assert.IsNotNull(result2);
         Assert.Greater(result.Results.Length, 0);

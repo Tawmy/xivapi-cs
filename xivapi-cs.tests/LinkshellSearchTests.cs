@@ -20,7 +20,7 @@ public class LinkshellSearchTests
     {
         var client = new XivApiClient();
         var result = await client.LinkshellSearchRegular("Odin");
-        var result2 = await client.LinkshellSearchRegular("Odin", page: 2);
+        var result2 = await client.LinkshellSearchRegular("Odin", 2);
         Assert.IsNotNull(result);
         Assert.IsNotNull(result2);
         Assert.Greater(result.Results.Length, 0);

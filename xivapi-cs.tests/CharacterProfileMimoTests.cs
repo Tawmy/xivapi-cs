@@ -53,7 +53,7 @@ public class CharacterProfileMimoTests
     {
         await TestMimo(18188832);
     }
-    
+
     [Test]
     public async Task GetTestMax()
     {
@@ -65,7 +65,7 @@ public class CharacterProfileMimoTests
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.MinionsMounts);
         Assert.IsNotNull(result);
-        
+
         if (hasMinions)
         {
             Assert.IsNotEmpty(result.Minions);

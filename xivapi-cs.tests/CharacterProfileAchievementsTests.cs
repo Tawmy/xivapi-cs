@@ -59,7 +59,7 @@ public class CharacterProfileAchievementsTests
     {
         await TestAchievements(18188832);
     }
-    
+
     [Test]
     public async Task GetTestMax()
     {

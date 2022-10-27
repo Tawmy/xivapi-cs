@@ -59,7 +59,7 @@ public class CharacterProfileFcTests
     {
         await TestFc(18188832, true);
     }
-    
+
     [Test]
     public async Task GetTestMax()
     {
