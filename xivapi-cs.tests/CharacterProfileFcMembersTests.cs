@@ -59,7 +59,7 @@ public class CharacterProfileFcMembersTests
     {
         await TestFcMembers(18188832, true);
     }
-    
+
     [Test]
     public async Task GetTestMax()
     {
@@ -71,7 +71,7 @@ public class CharacterProfileFcMembersTests
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.FreeCompanyMembers);
         Assert.IsNotNull(result);
-        
+
         if (hasFc)
         {
             Assert.IsNotNull(result.Character.FreeCompanyId);

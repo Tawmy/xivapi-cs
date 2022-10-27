@@ -53,7 +53,7 @@ public class CharacterProfileFriendsTests
     {
         await TestFriends(3435267);
     }
-    
+
     [Test]
     public async Task GetOne()
     {
@@ -65,7 +65,7 @@ public class CharacterProfileFriendsTests
     {
         await TestFriends(18188832);
     }
-    
+
     [Test]
     public async Task GetTestMax()
     {
@@ -77,7 +77,7 @@ public class CharacterProfileFriendsTests
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.Friends);
         Assert.IsNotNull(result);
-        
+
         if (mustBeEmpty)
         {
             Assert.IsEmpty(result.Friends);

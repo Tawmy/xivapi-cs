@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using NUnit.Framework;
 using xivapi_cs.Enums;
 using xivapi_cs.ViewModels.CharacterProfile;
@@ -61,17 +60,18 @@ public class CharacterProfileExtendedCompleteTests
     {
         await TestProfileExtendedComplete(18188832);
     }
-    
+
     [Test]
     public async Task GetTestMax()
     {
         var result = await TestProfileExtendedComplete(45386124, false, false);
-        
+
         Assert.IsEmpty(result.Minions);
         Assert.IsEmpty(result.Mounts);
     }
 
-    private async Task<CharacterProfileExtended> TestProfileExtendedComplete(int id, bool assertMinions = true, bool assertMounts = true)
+    private async Task<CharacterProfileExtended> TestProfileExtendedComplete(int id, bool assertMinions = true,
+        bool assertMounts = true)
     {
         var client = new XivApiClient();
         var result =
@@ -109,6 +109,8 @@ public class CharacterProfileExtendedCompleteTests
         {
             Assert.IsNotEmpty(result.Mounts);
         }
+
+        Assert.IsNotNull(result.Character.ActiveClassJob.Job.JobEnum);
 
         return result;
     }

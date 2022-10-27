@@ -81,14 +81,14 @@ public class CharacterSearchTests
     {
         var client = new XivApiClient();
         var result = await client.CharacterSearch("Odin");
-        var result2 = await client.CharacterSearch("Odin", page: 2);
+        var result2 = await client.CharacterSearch("Odin", 2);
         Assert.IsNotNull(result);
         Assert.IsNotNull(result2);
         Assert.Greater(result.Results.Length, 0);
         Assert.Greater(result2.Results.Length, 0);
         Assert.AreNotEqual(result.Results, result2.Results);
     }
-    
+
     [Test]
     public async Task SearchTestMax()
     {
@@ -97,7 +97,7 @@ public class CharacterSearchTests
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
-    
+
     [Test]
     public async Task SearchTestMin()
     {
