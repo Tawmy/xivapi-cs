@@ -143,4 +143,14 @@ public class CharacterProfileFcMembersTests
             Assert.IsNotNull(result.FreeCompanyMembers);
         }
     }
+    
+    [Test]
+    public async Task GetTestMax()
+    {
+        var client = new XivApiClient();
+        var result =
+            await client.CharacterProfile(45386124, CharacterProfileOptions.FreeCompanyMembers);
+        Assert.IsNotNull(result);
+        Assert.IsEmpty(result.FreeCompanyMembers);
+    }
 }

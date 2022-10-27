@@ -105,4 +105,14 @@ public class CharacterProfileMimoTests
         Assert.IsNotEmpty(result.Minions);
         Assert.IsNotEmpty(result.Mounts);
     }
+    
+    [Test]
+    public async Task GetTestMax()
+    {
+        var client = new XivApiClient();
+        var result = await client.CharacterProfile(45386124, CharacterProfileOptions.MinionsMounts);
+        Assert.IsNotNull(result);
+        Assert.IsEmpty(result.Minions);
+        Assert.IsEmpty(result.Mounts);
+    }
 }
