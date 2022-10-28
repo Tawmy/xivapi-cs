@@ -17,6 +17,7 @@ public static class DataCenterLogicalExtension
             case DataCenterLogical.Aether:
             case DataCenterLogical.Crystal:
             case DataCenterLogical.Primal:
+            case DataCenterLogical.Dynamis:
                 return DataCenterPhysical.NorthAmerica;
             case DataCenterLogical.Elemental:
             case DataCenterLogical.Gaia:
