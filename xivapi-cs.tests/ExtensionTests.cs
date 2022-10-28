@@ -17,4 +17,22 @@ public class ExtensionTests
             Assert.Greater(res.Count(), 2);
         }
     }
+
+    [Test]
+    public void TestDataCenterLogicalExtension()
+    {
+        foreach (var dataCenterLogical in (DataCenterLogical[]) Enum.GetValues(typeof(DataCenterLogical)))
+        {
+            Assert.DoesNotThrow(() => dataCenterLogical.GetDataCenterPhysical());
+        }
+    }
+
+    [Test]
+    public void TestHomeWorldExtension()
+    {
+        foreach (var homeWorld in (HomeWorld[]) Enum.GetValues(typeof(HomeWorld)))
+        {
+            Assert.DoesNotThrow(() => homeWorld.GetDataCenterLogical());
+        }
+    }
 }

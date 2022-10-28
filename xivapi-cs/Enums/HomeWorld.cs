@@ -59,6 +59,12 @@ public enum HomeWorld
     Leviathan,
     Ultros,
 
+    // Dynamis
+    Halicarnassus,
+    Maduin,
+    Marilith,
+    Seraph,
+
     // Elemental
     Aegis,
     Atomos,

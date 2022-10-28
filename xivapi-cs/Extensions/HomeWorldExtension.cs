@@ -60,6 +60,11 @@ public static class HomeWorldExtension
             case HomeWorld.Leviathan:
             case HomeWorld.Ultros:
                 return DataCenterLogical.Primal;
+            case HomeWorld.Halicarnassus:
+            case HomeWorld.Maduin:
+            case HomeWorld.Marilith:
+            case HomeWorld.Seraph:
+                return DataCenterLogical.Dynamis;
             case HomeWorld.Aegis:
             case HomeWorld.Atomos:
             case HomeWorld.Carbuncle:

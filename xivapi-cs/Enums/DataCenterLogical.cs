@@ -8,6 +8,7 @@ public enum DataCenterLogical
     Aether,
     Crystal,
     Primal,
+    Dynamis,
     Elemental,
     Gaia,
     Mana,
