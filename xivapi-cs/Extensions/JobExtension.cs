@@ -75,14 +75,14 @@ public static class JobExtension
             case Job.Ltw:
             case Job.Wvr:
             case Job.Alc:
-            case Job.Cln:
+            case Job.Cul:
                 return new[]
                 {
                     MateriaStat.Cp,
                     MateriaStat.Craftmanship,
                     MateriaStat.Control
                 };
-            case Job.Mnr:
+            case Job.Min:
             case Job.Btn:
             case Job.Fsh:
                 return new[]

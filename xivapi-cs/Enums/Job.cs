@@ -58,9 +58,9 @@ public enum Job
 
     [Display(Name = "Alchemist")] Alc,
 
-    [Display(Name = "Culinarian")] Cln,
+    [Display(Name = "Culinarian")] Cul,
 
-    [Display(Name = "Miner")] Mnr,
+    [Display(Name = "Miner")] Min,
 
     [Display(Name = "Botanist")] Btn,
 
