@@ -1,5 +1,3 @@
-using System;
-
 namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GrandCompany
@@ -8,13 +6,7 @@ public class GrandCompany
     {
         NameId = dto.NameId;
         RankId = dto.RankId;
-        GrandCompanyEnum = NameId switch
-        {
-            1 => Enums.GrandCompany.Maelstrom,
-            2 => Enums.GrandCompany.OrderTwinAdder,
-            3 => Enums.GrandCompany.ImmortalFlames,
-            _ => throw new ArgumentOutOfRangeException(nameof(NameId), NameId, "there are only three grand companies")
-        };
+        GrandCompanyEnum = (Enums.GrandCompany) NameId;
     }
 
     public int NameId { get; }
