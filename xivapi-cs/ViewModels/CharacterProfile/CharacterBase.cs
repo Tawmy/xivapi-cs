@@ -1,3 +1,5 @@
+using xivapi_cs.Models;
+
 namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class CharacterBase : Attribute
@@ -17,7 +19,7 @@ public class CharacterBase : Attribute
         ParseDate = dto.ParseDate;
         Portrait = dto.Portrait;
         PvPTeamId = dto.PvPTeamId;
-        Server = dto.Server;
+        HomeWorld = new HomeWorldDetails(dto.Server);
         TitleTop = dto.TitleTop;
     }
 
@@ -36,6 +38,6 @@ public class CharacterBase : Attribute
     public int ParseDate { get; }
     public string Portrait { get; }
     public int? PvPTeamId { get; }
-    public string Server { get; }
+    public HomeWorldDetails HomeWorld { get; }
     public bool TitleTop { get; }
 }
