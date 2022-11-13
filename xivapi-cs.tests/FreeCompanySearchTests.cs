@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using NUnit.Framework;
+using xivapi_cs.Enums;
 
 namespace xivapi_cs.tests;
 
@@ -18,7 +19,7 @@ public class FreeCompanySearchTests
     public async Task SearchUnionPhoenix()
     {
         var client = new XivApiClient();
-        var result = await client.FreeCompanySearch("Union", "Phoenix");
+        var result = await client.FreeCompanySearch("Union", HomeWorld.Phoenix);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
