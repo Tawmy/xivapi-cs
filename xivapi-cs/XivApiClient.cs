@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
@@ -23,17 +21,6 @@ public class XivApiClient
     {
         _client = new RestClient("https://xivapi.com/");
         _client.UseSystemTextJson();
-    }
-
-    private async Task<bool> IsValidServer(string server)
-    {
-        var servers = (await _client.ExecuteGetAsync<string[]>(new RestRequest("servers"))).Data;
-        if (servers.Contains(server))
-        {
-            return true;
-        }
-
-        throw new ArgumentException("Invalid server");
     }
 
     #region Free Company Profile
@@ -67,14 +54,14 @@ public class XivApiClient
         return await LinkshellSearchRegularInternal(name, null, null);
     }
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, string server)
+    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, HomeWorld homeWorld)
     {
-        return await LinkshellSearchRegularInternal(name, server, null);
+        return await LinkshellSearchRegularInternal(name, homeWorld, null);
     }
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, string server, int page)
+    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, HomeWorld homeWorld, int page)
     {
-        return await LinkshellSearchRegularInternal(name, server, page);
+        return await LinkshellSearchRegularInternal(name, homeWorld, page);
     }
 
     public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, int page)
@@ -82,9 +69,9 @@ public class XivApiClient
         return await LinkshellSearchRegularInternal(name, null, page);
     }
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegularInternal(string name, string? server, int? page)
+    public async Task<LinkshellSearch?> LinkshellSearchRegularInternal(string name, HomeWorld? homeWorld, int? page)
     {
-        var res = await LinkshellSearch("linkshell/search", name, server, page);
+        var res = await LinkshellSearch("linkshell/search", name, homeWorld, page);
         return res != null ? new LinkshellSearch(res) : null;
     }
 
@@ -105,17 +92,14 @@ public class XivApiClient
     }
 
     private async Task<DTOs.LinkshellSearch.LinkshellSearch?> LinkshellSearch(string reqStr, string name,
-        string? server, int? page)
+        HomeWorld? homeWorld, int? page)
     {
         var req = new RestRequest(reqStr);
         req.AddParameter("name", name);
 
-        if (server != null)
+        if (homeWorld != null)
         {
-            if (await IsValidServer(server))
-            {
-                req.AddParameter("server", server);
-            }
+            req.AddParameter("server", homeWorld);
         }
 
         if (page != null)
@@ -184,14 +168,14 @@ public class XivApiClient
         return await FreeCompanySearchInternal(name, null, null);
     }
 
-    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, string server)
+    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, HomeWorld homeWorld)
     {
-        return await FreeCompanySearchInternal(name, server, null);
+        return await FreeCompanySearchInternal(name, homeWorld, null);
     }
 
-    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, string server, int page)
+    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, HomeWorld homeWorld, int page)
     {
-        return await FreeCompanySearchInternal(name, server, page);
+        return await FreeCompanySearchInternal(name, homeWorld, page);
     }
 
     public async Task<FreeCompanySearch?> FreeCompanySearch(string name, int page)
@@ -199,16 +183,13 @@ public class XivApiClient
         return await FreeCompanySearchInternal(name, null, page);
     }
 
-    private async Task<FreeCompanySearch?> FreeCompanySearchInternal(string name, string? server, int? page)
+    private async Task<FreeCompanySearch?> FreeCompanySearchInternal(string name, HomeWorld? homeWorld, int? page)
     {
         var req = new RestRequest("freecompany/search");
         req.AddParameter("name", name);
-        if (server != null)
+        if (homeWorld != null)
         {
-            if (await IsValidServer(server))
-            {
-                req.AddParameter("server", server);
-            }
+            req.AddParameter("server", homeWorld);
         }
 
         if (page != null)
@@ -230,14 +211,14 @@ public class XivApiClient
         return await CharacterSearchInternal(name, null, null);
     }
 
-    public async Task<CharacterSearch?> CharacterSearch(string name, string server)
+    public async Task<CharacterSearch?> CharacterSearch(string name, HomeWorld homeWorld)
     {
-        return await CharacterSearchInternal(name, server, null);
+        return await CharacterSearchInternal(name, homeWorld, null);
     }
 
-    public async Task<CharacterSearch?> CharacterSearch(string name, string server, int page)
+    public async Task<CharacterSearch?> CharacterSearch(string name, HomeWorld homeWorld, int page)
     {
-        return await CharacterSearchInternal(name, server, page);
+        return await CharacterSearchInternal(name, homeWorld, page);
     }
 
     public async Task<CharacterSearch?> CharacterSearch(string name, int page)
@@ -245,16 +226,14 @@ public class XivApiClient
         return await CharacterSearchInternal(name, null, page);
     }
 
-    private async Task<CharacterSearch?> CharacterSearchInternal(string name, string? server, int? page)
+    private async Task<CharacterSearch?> CharacterSearchInternal(string name, HomeWorld? homeWorld, int? page)
     {
         var req = new RestRequest("character/search");
         req.AddParameter("name", name);
-        if (server != null)
+
+        if (homeWorld != null)
         {
-            if (await IsValidServer(server))
-            {
-                req.AddParameter("server", server);
-            }
+            req.AddParameter("server", homeWorld);
         }
 
         if (page != null)

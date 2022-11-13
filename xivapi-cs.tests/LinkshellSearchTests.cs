@@ -1,6 +1,6 @@
-using System;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using xivapi_cs.Enums;
 
 namespace xivapi_cs.tests;
 
@@ -45,16 +45,8 @@ public class LinkshellSearchTests
     public async Task SearchOdinPhoenix()
     {
         var client = new XivApiClient();
-        var result = await client.LinkshellSearchRegular("Odin", "Phoenix");
+        var result = await client.LinkshellSearchRegular("Odin", HomeWorld.Phoenix);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
-    }
-
-    [Test]
-    public void SearchOdinGibberishServer()
-    {
-        var client = new XivApiClient();
-        Assert.ThrowsAsync<ArgumentException>(
-            async () => await client.LinkshellSearchRegular("Odin", "fhaskjlhfajkshf"));
     }
 }

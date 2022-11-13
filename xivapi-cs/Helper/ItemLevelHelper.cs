@@ -32,7 +32,7 @@ public static class ItemLevelHelper
             total += offHand;
         }
 
-        return (int)decimal.Divide(total, 12);
+        return (int) decimal.Divide(total, 12);
     }
 
     private static int GetItemLevel(GearPieceExtended? piece)
