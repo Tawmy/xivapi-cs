@@ -66,7 +66,7 @@ public class GetCharacterTests
         await TestProfile(45386124);
     }
 
-    private async Task TestProfile(int id)
+    private static async Task TestProfile(int id)
     {
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.None);

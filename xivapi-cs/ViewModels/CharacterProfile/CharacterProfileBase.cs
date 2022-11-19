@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using xivapi_cs.Helper;
 
 namespace xivapi_cs.ViewModels.CharacterProfile;
 
@@ -51,4 +52,6 @@ public class CharacterProfileBase
     // MIMO
     public Pet[] Minions { get; } = Array.Empty<Pet>();
     public Pet[] Mounts { get; } = Array.Empty<Pet>();
+    public decimal MinionPercentage => MiMoHelper.GetMinionPercentage(Minions.Length);
+    public decimal MountPercentage => MiMoHelper.GetMountPercentage(Mounts.Length);
 }

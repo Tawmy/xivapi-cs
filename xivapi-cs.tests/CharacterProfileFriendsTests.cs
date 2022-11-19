@@ -19,6 +19,12 @@ public class CharacterProfileFriendsTests
     }
 
     [Test]
+    public async Task GetNinfix()
+    {
+        await TestFriends(2648055);
+    }
+
+    [Test]
     public async Task GetHalvar()
     {
         await TestFriends(28915387);
@@ -72,7 +78,7 @@ public class CharacterProfileFriendsTests
         await TestFriends(45386124, true);
     }
 
-    private async Task TestFriends(int id, bool mustBeEmpty = false)
+    private static async Task TestFriends(int id, bool mustBeEmpty = false)
     {
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.Friends);

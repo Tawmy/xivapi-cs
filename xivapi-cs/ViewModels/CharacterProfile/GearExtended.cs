@@ -1,3 +1,5 @@
+using xivapi_cs.Helper;
+
 namespace xivapi_cs.ViewModels.CharacterProfile;
 
 public class GearExtended
@@ -79,4 +81,5 @@ public class GearExtended
     public GearPieceExtended? Ring1 { get; }
     public GearPieceExtended? Ring2 { get; }
     public GearPieceExtended? SoulCrystal { get; }
+    public int AverageItemLevel => ItemLevelHelper.CalculateAvgItemLevel(this);
 }

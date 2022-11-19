@@ -20,6 +20,12 @@ public class CharacterProfileExtendedCompleteTests
     }
 
     [Test]
+    public async Task GetNinfix()
+    {
+        await TestProfileExtendedComplete(2648055);
+    }
+
+    [Test]
     public async Task GetHalvar()
     {
         await TestProfileExtendedComplete(28915387);
@@ -70,7 +76,7 @@ public class CharacterProfileExtendedCompleteTests
         Assert.IsEmpty(result.Mounts);
     }
 
-    private async Task<CharacterProfileExtended> TestProfileExtendedComplete(int id, bool assertMinions = true,
+    private static async Task<CharacterProfileExtended> TestProfileExtendedComplete(int id, bool assertMinions = true,
         bool assertMounts = true)
     {
         var client = new XivApiClient();
@@ -111,6 +117,7 @@ public class CharacterProfileExtendedCompleteTests
         }
 
         Assert.IsNotNull(result.Character.ActiveClassJob.Job.JobEnum);
+        Assert.IsNotNull(result.Character.GearSet.Gear.AverageItemLevel);
 
         return result;
     }

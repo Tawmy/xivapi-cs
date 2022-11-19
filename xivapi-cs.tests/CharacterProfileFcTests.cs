@@ -19,6 +19,12 @@ public class CharacterProfileFcTests
     }
 
     [Test]
+    public async Task GetNinfix()
+    {
+        await TestFc(2648055, true);
+    }
+
+    [Test]
     public async Task GetHalvar()
     {
         await TestFc(28915387, true);
@@ -66,7 +72,7 @@ public class CharacterProfileFcTests
         await TestFc(45386124, false);
     }
 
-    private async Task TestFc(int id, bool hasFc)
+    private static async Task TestFc(int id, bool hasFc)
     {
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.FreeCompany);
