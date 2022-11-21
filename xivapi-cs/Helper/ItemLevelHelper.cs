@@ -2,7 +2,7 @@ using xivapi_cs.ViewModels.CharacterProfile;
 
 namespace xivapi_cs.Helper;
 
-public static class ItemLevelHelper
+internal static class ItemLevelHelper
 {
     public static int CalculateAvgItemLevel(GearExtended gear)
     {

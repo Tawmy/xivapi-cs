@@ -19,6 +19,12 @@ public class CharacterProfileAchievementsTests
     }
 
     [Test]
+    public async Task GetNinfix()
+    {
+        await TestAchievements(2648055);
+    }
+
+    [Test]
     public async Task GetHalvar()
     {
         await TestAchievements(28915387);
@@ -66,7 +72,7 @@ public class CharacterProfileAchievementsTests
         await TestAchievements(45386124);
     }
 
-    private async Task TestAchievements(int id)
+    private static async Task TestAchievements(int id)
     {
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.Achievements);

@@ -1,6 +1,6 @@
 namespace xivapi_cs.Helper;
 
-public static class MiMoHelper
+internal static class MiMoHelper
 {
     public static decimal GetMinionPercentage(int minions)
     {

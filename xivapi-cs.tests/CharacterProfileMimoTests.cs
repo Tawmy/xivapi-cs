@@ -19,6 +19,12 @@ public class CharacterProfileMimoTests
     }
 
     [Test]
+    public async Task GetNinfix()
+    {
+        await TestMimo(2648055);
+    }
+
+    [Test]
     public async Task GetHalvar()
     {
         await TestMimo(28915387);
@@ -60,7 +66,7 @@ public class CharacterProfileMimoTests
         await TestMimo(45386124, false, false);
     }
 
-    private async Task TestMimo(int id, bool hasMinions = true, bool hasMounts = true)
+    private static async Task TestMimo(int id, bool hasMinions = true, bool hasMounts = true)
     {
         var client = new XivApiClient();
         var result = await client.CharacterProfile(id, CharacterProfileOptions.MinionsMounts);
@@ -69,6 +75,7 @@ public class CharacterProfileMimoTests
         if (hasMinions)
         {
             Assert.IsNotEmpty(result.Minions);
+            Assert.IsNotNull(result.MinionPercentage);
         }
         else
         {
@@ -78,6 +85,7 @@ public class CharacterProfileMimoTests
         if (hasMounts)
         {
             Assert.IsNotEmpty(result.Mounts);
+            Assert.IsNotNull(result.MountPercentage);
         }
         else
         {
