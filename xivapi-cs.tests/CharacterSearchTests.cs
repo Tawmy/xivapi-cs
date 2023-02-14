@@ -7,82 +7,82 @@ namespace xivapi_cs.tests;
 public class CharacterSearchTests
 {
     [Test]
-    public async Task SearchAlyx()
+    public async Task SearchAlyxAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Alyx Bergen", HomeWorld.Phoenix);
+        var result = await client.SearchCharacterAsync("Alyx Bergen", HomeWorld.Phoenix);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchLisa()
+    public async Task SearchLisaAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Lisa Bergen", HomeWorld.Phoenix);
+        var result = await client.SearchCharacterAsync("Lisa Bergen", HomeWorld.Phoenix);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchHalvar()
+    public async Task SearchHalvarAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Halvar Ragnar", HomeWorld.Phoenix);
+        var result = await client.SearchCharacterAsync("Halvar Ragnar", HomeWorld.Phoenix);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchGibberish()
+    public async Task SearchGibberishAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("fasklhflaskakshflksaf");
+        var result = await client.SearchCharacterAsync("fasklhflaskakshflksaf");
         Assert.IsNotNull(result);
         Assert.IsEmpty(result.Results);
     }
 
     [Test]
-    public async Task SearchAlyxWrongServer()
+    public async Task SearchAlyxWrongServerAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Alyx Bergen", HomeWorld.Zodiark);
+        var result = await client.SearchCharacterAsync("Alyx Bergen", HomeWorld.Zodiark);
         Assert.IsNotNull(result);
     }
 
     [Test]
-    public async Task SearchAlyxNoServer()
+    public async Task SearchAlyxNoServerAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Alyx Bergen");
-        Assert.IsNotNull(result);
-        Assert.Greater(result.Results.Length, 0);
-    }
-
-    [Test]
-    public async Task SearchHena()
-    {
-        var client = new XivApiClient();
-        var result = await client.CharacterSearch("Hena Wilbert", HomeWorld.Phoenix);
+        var result = await client.SearchCharacterAsync("Alyx Bergen");
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchOdin()
+    public async Task SearchHenaAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Odin");
+        var result = await client.SearchCharacterAsync("Hena Wilbert", HomeWorld.Phoenix);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchOdinAndComparePages()
+    public async Task SearchOdinAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Odin");
-        var result2 = await client.CharacterSearch("Odin", 2);
+        var result = await client.SearchCharacterAsync("Odin");
+        Assert.IsNotNull(result);
+        Assert.Greater(result.Results.Length, 0);
+    }
+
+    [Test]
+    public async Task SearchOdinAndComparePagesAsync()
+    {
+        var client = new XivApiClient();
+        var result = await client.SearchCharacterAsync("Odin");
+        var result2 = await client.SearchCharacterAsync("Odin", 2);
         Assert.IsNotNull(result);
         Assert.IsNotNull(result2);
         Assert.Greater(result.Results.Length, 0);
@@ -91,19 +91,19 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchTestMax()
+    public async Task SearchTestMaxAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Testerinus Maximus", HomeWorld.Twintania);
+        var result = await client.SearchCharacterAsync("Testerinus Maximus", HomeWorld.Twintania);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchTestMin()
+    public async Task SearchTestMinAsync()
     {
         var client = new XivApiClient();
-        var result = await client.CharacterSearch("Testerinus Minimus");
+        var result = await client.SearchCharacterAsync("Testerinus Minimus");
         Assert.IsNotNull(result);
         Assert.AreEqual(0, 0);
     }

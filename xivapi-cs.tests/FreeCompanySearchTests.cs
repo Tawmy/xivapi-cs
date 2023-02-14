@@ -7,38 +7,38 @@ namespace xivapi_cs.tests;
 public class FreeCompanySearchTests
 {
     [Test]
-    public async Task SearchUnion()
+    public async Task SearchUnionAsync()
     {
         var client = new XivApiClient();
-        var result = await client.FreeCompanySearch("Union");
+        var result = await client.SearchFreeCompanyAsync("Union");
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchUnionPhoenix()
+    public async Task SearchUnionPhoenixAsync()
     {
         var client = new XivApiClient();
-        var result = await client.FreeCompanySearch("Union", HomeWorld.Phoenix);
+        var result = await client.SearchFreeCompanyAsync("Union", HomeWorld.Phoenix);
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchAkadaemiaEorzea()
+    public async Task SearchAkadaemiaEorzeaAsync()
     {
         var client = new XivApiClient();
-        var result = await client.FreeCompanySearch("Akadaemia Eorzea");
+        var result = await client.SearchFreeCompanyAsync("Akadaemia Eorzea");
         Assert.IsNotNull(result);
         Assert.Greater(result.Results.Length, 0);
     }
 
     [Test]
-    public async Task SearchGuildAndComparePages()
+    public async Task SearchGuildAndComparePagesAsync()
     {
         var client = new XivApiClient();
-        var result = await client.FreeCompanySearch("Guild");
-        var result2 = await client.FreeCompanySearch("Guild", 2);
+        var result = await client.SearchFreeCompanyAsync("Guild");
+        var result2 = await client.SearchFreeCompanyAsync("Guild", 2);
         Assert.IsNotNull(result);
         Assert.IsNotNull(result2);
         Assert.Greater(result.Results.Length, 0);

@@ -7,75 +7,75 @@ namespace xivapi_cs.tests;
 public class CharacterProfileFcTests
 {
     [Test]
-    public async Task GetAlyx()
+    public async Task GetAlyxAsync()
     {
-        await TestFc(28812634, true);
+        await TestFcAsync(28812634, true);
     }
 
     [Test]
-    public async Task GetLisa()
+    public async Task GetLisaAsync()
     {
-        await TestFc(32691240, true);
+        await TestFcAsync(32691240, true);
     }
 
     [Test]
-    public async Task GetNinfix()
+    public async Task GetNinfixAsync()
     {
-        await TestFc(2648055, true);
+        await TestFcAsync(2648055, true);
     }
 
     [Test]
-    public async Task GetHalvar()
+    public async Task GetHalvarAsync()
     {
-        await TestFc(28915387, true);
+        await TestFcAsync(28915387, true);
     }
 
     [Test]
-    public async Task GetFuoca()
+    public async Task GetFuocaAsync()
     {
-        await TestFc(21201379, true);
+        await TestFcAsync(21201379, true);
     }
 
     [Test]
-    public async Task GetHena()
+    public async Task GetHenaAsync()
     {
-        await TestFc(28835226, false);
+        await TestFcAsync(28835226, false);
     }
 
     [Test]
-    public async Task GetEbih()
+    public async Task GetEbihAsync()
     {
-        await TestFc(28025341, true);
+        await TestFcAsync(28025341, true);
     }
 
     [Test]
-    public async Task GetGenryu()
+    public async Task GetGenryuAsync()
     {
-        await TestFc(3435267, true);
+        await TestFcAsync(3435267, true);
     }
 
     [Test]
-    public async Task GetOne()
+    public async Task GetOneAsync()
     {
-        await TestFc(28834908, false);
+        await TestFcAsync(28834908, false);
     }
 
     [Test]
-    public async Task GetRhayn()
+    public async Task GetRhaynAsync()
     {
-        await TestFc(18188832, true);
+        await TestFcAsync(18188832, true);
     }
 
     [Test]
-    public async Task GetTestMax()
+    public async Task GetTestMaxAsync()
     {
-        await TestFc(45386124, false);
+        await TestFcAsync(45386124, false);
     }
 
-    private static async Task TestFc(int id, bool hasFc)
+    private static async Task TestFcAsync(int id, bool hasFc)
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(id, CharacterProfileOptions.FreeCompany);
+        var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
 
         if (hasFc)

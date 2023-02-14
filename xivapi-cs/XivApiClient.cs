@@ -25,7 +25,7 @@ public class XivApiClient
 
     #region Free Company Profile
 
-    public async Task<FreeCompanyProfile?> FreeCompanyProfile(string id, bool fetchMembers)
+    public async Task<FreeCompanyProfile?> GetFreeCompanyProfileAsync(string id, bool fetchMembers)
     {
         var req = new RestRequest($"freecompany/{id}");
 
@@ -49,49 +49,50 @@ public class XivApiClient
 
     #region Linkshell Search
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name)
+    public async Task<LinkshellSearch?> SearchLinkshellRegularAsync(string name)
     {
-        return await LinkshellSearchRegularInternal(name, null, null);
+        return await SearchLinkshellRegularInternalAsync(name, null, null);
     }
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, HomeWorld homeWorld)
+    public async Task<LinkshellSearch?> SearchLinkshellRegularAsync(string name, HomeWorld homeWorld)
     {
-        return await LinkshellSearchRegularInternal(name, homeWorld, null);
+        return await SearchLinkshellRegularInternalAsync(name, homeWorld, null);
     }
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, HomeWorld homeWorld, int page)
+    public async Task<LinkshellSearch?> SearchLinkshellRegularAsync(string name, HomeWorld homeWorld, int page)
     {
-        return await LinkshellSearchRegularInternal(name, homeWorld, page);
+        return await SearchLinkshellRegularInternalAsync(name, homeWorld, page);
     }
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegular(string name, int page)
+    public async Task<LinkshellSearch?> SearchLinkshellRegularAsync(string name, int page)
     {
-        return await LinkshellSearchRegularInternal(name, null, page);
+        return await SearchLinkshellRegularInternalAsync(name, null, page);
     }
 
-    public async Task<LinkshellSearch?> LinkshellSearchRegularInternal(string name, HomeWorld? homeWorld, int? page)
+    private async Task<LinkshellSearch?> SearchLinkshellRegularInternalAsync(string name, HomeWorld? homeWorld,
+        int? page)
     {
-        var res = await LinkshellSearch("linkshell/search", name, homeWorld, page);
+        var res = await SearchLinkshellAsync("linkshell/search", name, homeWorld, page);
         return res != null ? new LinkshellSearch(res) : null;
     }
 
-    public async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworld(string name)
+    public async Task<CrossworldLinkshellSearch?> SearchLinkshellCrossworldAsync(string name)
     {
-        return await LinkshellSearchCrossworldInternal(name, null);
+        return await SearchLinkshellCrossworldInternalAsync(name, null);
     }
 
-    public async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworld(string name, int page)
+    public async Task<CrossworldLinkshellSearch?> SearchLinkshellCrossworldAsync(string name, int page)
     {
-        return await LinkshellSearchCrossworldInternal(name, null);
+        return await SearchLinkshellCrossworldInternalAsync(name, null);
     }
 
-    private async Task<CrossworldLinkshellSearch?> LinkshellSearchCrossworldInternal(string name, int? page)
+    private async Task<CrossworldLinkshellSearch?> SearchLinkshellCrossworldInternalAsync(string name, int? page)
     {
-        var res = await LinkshellSearch("linkshell/crossworld/search", name, null, page);
+        var res = await SearchLinkshellAsync("linkshell/crossworld/search", name, null, page);
         return res != null ? new CrossworldLinkshellSearch(res) : null;
     }
 
-    private async Task<DTOs.LinkshellSearch.LinkshellSearch?> LinkshellSearch(string reqStr, string name,
+    private async Task<DTOs.LinkshellSearch.LinkshellSearch?> SearchLinkshellAsync(string reqStr, string name,
         HomeWorld? homeWorld, int? page)
     {
         var req = new RestRequest(reqStr);
@@ -115,39 +116,39 @@ public class XivApiClient
 
     #region Linkshell Profile
 
-    public async Task<Linkshell?> LinkshellProfileRegular(string id)
+    public async Task<Linkshell?> GetLinkshellProfileRegularAsync(string id)
     {
-        return await LinkshellProfileRegularInternal(id, null);
+        return await GetLinkshellProfileRegularInternalAsync(id, null);
     }
 
-    public async Task<Linkshell?> LinkshellProfileRegular(string id, int page)
+    public async Task<Linkshell?> GetLinkshellProfileRegularAsync(string id, int page)
     {
-        return await LinkshellProfileRegularInternal(id, page);
+        return await GetLinkshellProfileRegularInternalAsync(id, page);
     }
 
-    private async Task<Linkshell?> LinkshellProfileRegularInternal(string id, int? page)
+    private async Task<Linkshell?> GetLinkshellProfileRegularInternalAsync(string id, int? page)
     {
-        var res = await LinkshellProfile($"linkshell/{id}", page);
+        var res = await GetLinkshellProfileAsync($"linkshell/{id}", page);
         return res != null ? new Linkshell(res) : null;
     }
 
-    public async Task<CrossworldLinkshell?> LinkshellProfileCrossworld(string id)
+    public async Task<CrossworldLinkshell?> GetLinkshellProfileCrossworldAsync(string id)
     {
-        return await LinkshellProfileCrossworldInternal(id, null);
+        return await GetLinkshellProfileCrossworldInternalAsync(id, null);
     }
 
-    public async Task<CrossworldLinkshell?> LinkshellProfileCrossworld(string id, int page)
+    public async Task<CrossworldLinkshell?> GetLinkshellProfileCrossworldAsync(string id, int page)
     {
-        return await LinkshellProfileCrossworldInternal(id, page);
+        return await GetLinkshellProfileCrossworldInternalAsync(id, page);
     }
 
-    private async Task<CrossworldLinkshell?> LinkshellProfileCrossworldInternal(string id, int? page)
+    private async Task<CrossworldLinkshell?> GetLinkshellProfileCrossworldInternalAsync(string id, int? page)
     {
-        var res = await LinkshellProfile($"linkshell/crossworld/{id}", page);
+        var res = await GetLinkshellProfileAsync($"linkshell/crossworld/{id}", page);
         return res != null ? new CrossworldLinkshell(res) : null;
     }
 
-    private async Task<DTOs.LinkshellProfile.Linkshell?> LinkshellProfile(string reqStr, int? page)
+    private async Task<DTOs.LinkshellProfile.Linkshell?> GetLinkshellProfileAsync(string reqStr, int? page)
     {
         var req = new RestRequest(reqStr);
         if (page != null)
@@ -163,27 +164,27 @@ public class XivApiClient
 
     #region Free Company Search
 
-    public async Task<FreeCompanySearch?> FreeCompanySearch(string name)
+    public async Task<FreeCompanySearch?> SearchFreeCompanyAsync(string name)
     {
-        return await FreeCompanySearchInternal(name, null, null);
+        return await SearchFreeCompanyInternalAsync(name, null, null);
     }
 
-    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, HomeWorld homeWorld)
+    public async Task<FreeCompanySearch?> SearchFreeCompanyAsync(string name, HomeWorld homeWorld)
     {
-        return await FreeCompanySearchInternal(name, homeWorld, null);
+        return await SearchFreeCompanyInternalAsync(name, homeWorld, null);
     }
 
-    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, HomeWorld homeWorld, int page)
+    public async Task<FreeCompanySearch?> SearchFreeCompanyAsync(string name, HomeWorld homeWorld, int page)
     {
-        return await FreeCompanySearchInternal(name, homeWorld, page);
+        return await SearchFreeCompanyInternalAsync(name, homeWorld, page);
     }
 
-    public async Task<FreeCompanySearch?> FreeCompanySearch(string name, int page)
+    public async Task<FreeCompanySearch?> SearchFreeCompanyAsync(string name, int page)
     {
-        return await FreeCompanySearchInternal(name, null, page);
+        return await SearchFreeCompanyInternalAsync(name, null, page);
     }
 
-    private async Task<FreeCompanySearch?> FreeCompanySearchInternal(string name, HomeWorld? homeWorld, int? page)
+    private async Task<FreeCompanySearch?> SearchFreeCompanyInternalAsync(string name, HomeWorld? homeWorld, int? page)
     {
         var req = new RestRequest("freecompany/search");
         req.AddParameter("name", name);
@@ -206,27 +207,27 @@ public class XivApiClient
 
     #region Character Search
 
-    public async Task<CharacterSearch?> CharacterSearch(string name)
+    public async Task<CharacterSearch?> SearchCharacterAsync(string name)
     {
-        return await CharacterSearchInternal(name, null, null);
+        return await SearchCharacterInternalAsync(name, null, null);
     }
 
-    public async Task<CharacterSearch?> CharacterSearch(string name, HomeWorld homeWorld)
+    public async Task<CharacterSearch?> SearchCharacterAsync(string name, HomeWorld homeWorld)
     {
-        return await CharacterSearchInternal(name, homeWorld, null);
+        return await SearchCharacterInternalAsync(name, homeWorld, null);
     }
 
-    public async Task<CharacterSearch?> CharacterSearch(string name, HomeWorld homeWorld, int page)
+    public async Task<CharacterSearch?> SearchCharacterAsync(string name, HomeWorld homeWorld, int page)
     {
-        return await CharacterSearchInternal(name, homeWorld, page);
+        return await SearchCharacterInternalAsync(name, homeWorld, page);
     }
 
-    public async Task<CharacterSearch?> CharacterSearch(string name, int page)
+    public async Task<CharacterSearch?> SearchCharacterAsync(string name, int page)
     {
-        return await CharacterSearchInternal(name, null, page);
+        return await SearchCharacterInternalAsync(name, null, page);
     }
 
-    private async Task<CharacterSearch?> CharacterSearchInternal(string name, HomeWorld? homeWorld, int? page)
+    private async Task<CharacterSearch?> SearchCharacterInternalAsync(string name, HomeWorld? homeWorld, int? page)
     {
         var req = new RestRequest("character/search");
         req.AddParameter("name", name);
@@ -250,7 +251,7 @@ public class XivApiClient
 
     #region Character Profile
 
-    public async Task<CharacterProfile?> CharacterProfile(int id, CharacterProfileOptions options)
+    public async Task<CharacterProfile?> GetCharacterProfileAsync(int id, CharacterProfileOptions options)
     {
         var req = new RestRequest($"character/{id}");
 
@@ -291,7 +292,8 @@ public class XivApiClient
         return des != null ? new CharacterProfile(des) : null;
     }
 
-    public async Task<CharacterProfileExtended?> CharacterProfileExtended(int id, CharacterProfileOptions options)
+    public async Task<CharacterProfileExtended?> GetCharacterProfileExtendedAsync(int id,
+        CharacterProfileOptions options)
     {
         var req = new RestRequest($"character/{id}");
 
