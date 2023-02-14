@@ -7,7 +7,7 @@ namespace xivapi_cs.tests;
 public class LinkshellSearchTests
 {
     [Test]
-    public async Task SearchOdin()
+    public async Task SearchOdinAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchLinkshellRegularAsync("Odin");
