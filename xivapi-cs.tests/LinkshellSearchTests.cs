@@ -16,7 +16,7 @@ public class LinkshellSearchTests
     }
 
     [Test]
-    public async Task SearchOdinAndComparePages()
+    public async Task SearchOdinAndComparePagesAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchLinkshellRegularAsync("Odin");
@@ -29,7 +29,7 @@ public class LinkshellSearchTests
     }
 
     [Test]
-    public async Task SearchOdinCrossworldAndComparePages()
+    public async Task SearchOdinCrossworldAndComparePagesAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchLinkshellCrossworldAsync("Odin");
@@ -42,7 +42,7 @@ public class LinkshellSearchTests
     }
 
     [Test]
-    public async Task SearchOdinPhoenix()
+    public async Task SearchOdinPhoenixAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchLinkshellRegularAsync("Odin", HomeWorld.Phoenix);

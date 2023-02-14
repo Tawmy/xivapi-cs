@@ -7,7 +7,7 @@ namespace xivapi_cs.tests;
 public class FreeCompanySearchTests
 {
     [Test]
-    public async Task SearchUnion()
+    public async Task SearchUnionAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchFreeCompanyAsync("Union");
@@ -16,7 +16,7 @@ public class FreeCompanySearchTests
     }
 
     [Test]
-    public async Task SearchUnionPhoenix()
+    public async Task SearchUnionPhoenixAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchFreeCompanyAsync("Union", HomeWorld.Phoenix);
@@ -25,7 +25,7 @@ public class FreeCompanySearchTests
     }
 
     [Test]
-    public async Task SearchAkadaemiaEorzea()
+    public async Task SearchAkadaemiaEorzeaAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchFreeCompanyAsync("Akadaemia Eorzea");
@@ -34,7 +34,7 @@ public class FreeCompanySearchTests
     }
 
     [Test]
-    public async Task SearchGuildAndComparePages()
+    public async Task SearchGuildAndComparePagesAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchFreeCompanyAsync("Guild");

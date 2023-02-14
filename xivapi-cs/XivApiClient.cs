@@ -69,7 +69,8 @@ public class XivApiClient
         return await SearchLinkshellRegularInternalAsync(name, null, page);
     }
 
-    private async Task<LinkshellSearch?> SearchLinkshellRegularInternalAsync(string name, HomeWorld? homeWorld, int? page)
+    private async Task<LinkshellSearch?> SearchLinkshellRegularInternalAsync(string name, HomeWorld? homeWorld,
+        int? page)
     {
         var res = await SearchLinkshellAsync("linkshell/search", name, homeWorld, page);
         return res != null ? new LinkshellSearch(res) : null;
@@ -291,7 +292,8 @@ public class XivApiClient
         return des != null ? new CharacterProfile(des) : null;
     }
 
-    public async Task<CharacterProfileExtended?> GetCharacterProfileExtendedAsync(int id, CharacterProfileOptions options)
+    public async Task<CharacterProfileExtended?> GetCharacterProfileExtendedAsync(int id,
+        CharacterProfileOptions options)
     {
         var req = new RestRequest($"character/{id}");
 

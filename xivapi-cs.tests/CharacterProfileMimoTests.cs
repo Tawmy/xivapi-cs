@@ -7,66 +7,66 @@ namespace xivapi_cs.tests;
 public class CharacterProfileMimoTests
 {
     [Test]
-    public async Task GetAlyx()
+    public async Task GetAlyxAsync()
     {
-        await TestMimo(28812634);
+        await TestMimoAsync(28812634);
     }
 
     [Test]
-    public async Task GetLisa()
+    public async Task GetLisaAsync()
     {
-        await TestMimo(32691240);
+        await TestMimoAsync(32691240);
     }
 
     [Test]
-    public async Task GetNinfix()
+    public async Task GetNinfixAsync()
     {
-        await TestMimo(2648055);
+        await TestMimoAsync(2648055);
     }
 
     [Test]
-    public async Task GetHalvar()
+    public async Task GetHalvarAsync()
     {
-        await TestMimo(28915387);
+        await TestMimoAsync(28915387);
     }
 
     [Test]
-    public async Task GetFuoca()
+    public async Task GetFuocaAsync()
     {
-        await TestMimo(21201379);
+        await TestMimoAsync(21201379);
     }
 
     [Test]
-    public async Task GetEbih()
+    public async Task GetEbihAsync()
     {
-        await TestMimo(28025341);
+        await TestMimoAsync(28025341);
     }
 
     [Test]
-    public async Task GetGenryu()
+    public async Task GetGenryuAsync()
     {
-        await TestMimo(3435267);
+        await TestMimoAsync(3435267);
     }
 
     [Test]
-    public async Task GetOne()
+    public async Task GetOneAsync()
     {
-        await TestMimo(28834908);
+        await TestMimoAsync(28834908);
     }
 
     [Test]
-    public async Task GetRhayn()
+    public async Task GetRhaynAsync()
     {
-        await TestMimo(18188832);
+        await TestMimoAsync(18188832);
     }
 
     [Test]
-    public async Task GetTestMax()
+    public async Task GetTestMaxAsync()
     {
-        await TestMimo(45386124, false, false);
+        await TestMimoAsync(45386124, false, false);
     }
 
-    private static async Task TestMimo(int id, bool hasMinions = true, bool hasMounts = true)
+    private static async Task TestMimoAsync(int id, bool hasMinions = true, bool hasMounts = true)
     {
         var client = new XivApiClient();
         var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.MinionsMounts);

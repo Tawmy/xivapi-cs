@@ -6,7 +6,7 @@ namespace xivapi_cs.tests;
 public class LinkshellProfileTests
 {
     [Test]
-    public async Task GetRegular()
+    public async Task GetRegularAsync()
     {
         var client = new XivApiClient();
         var result = await client.GetLinkshellProfileRegularAsync("11540474045161933");
@@ -14,7 +14,7 @@ public class LinkshellProfileTests
     }
 
     [Test]
-    public async Task GetCrossworld()
+    public async Task GetCrossworldAsync()
     {
         var client = new XivApiClient();
         var result = await client.GetLinkshellProfileCrossworldAsync("b2f4cbcae4c10ea9f82b7234c4acf433eca95ba6");

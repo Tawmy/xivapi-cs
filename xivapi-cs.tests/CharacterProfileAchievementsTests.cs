@@ -7,72 +7,72 @@ namespace xivapi_cs.tests;
 public class CharacterProfileAchievementsTests
 {
     [Test]
-    public async Task GetAlyx()
+    public async Task GetAlyxAsync()
     {
-        await TestAchievements(28812634);
+        await TestAchievementsAsync(28812634);
     }
 
     [Test]
-    public async Task GetLisa()
+    public async Task GetLisaAsync()
     {
-        await TestAchievements(32691240);
+        await TestAchievementsAsync(32691240);
     }
 
     [Test]
-    public async Task GetNinfix()
+    public async Task GetNinfixAsync()
     {
-        await TestAchievements(2648055);
+        await TestAchievementsAsync(2648055);
     }
 
     [Test]
-    public async Task GetHalvar()
+    public async Task GetHalvarAsync()
     {
-        await TestAchievements(28915387);
+        await TestAchievementsAsync(28915387);
     }
 
     [Test]
-    public async Task GetFuoca()
+    public async Task GetFuocaAsync()
     {
-        await TestAchievements(21201379);
+        await TestAchievementsAsync(21201379);
     }
 
     [Test]
-    public async Task GetHena()
+    public async Task GetHenaAsync()
     {
-        await TestAchievements(28835226);
+        await TestAchievementsAsync(28835226);
     }
 
     [Test]
-    public async Task GetEbih()
+    public async Task GetEbihAsync()
     {
-        await TestAchievements(28025341);
+        await TestAchievementsAsync(28025341);
     }
 
     [Test]
-    public async Task GetGenryu()
+    public async Task GetGenryuAsync()
     {
-        await TestAchievements(3435267);
+        await TestAchievementsAsync(3435267);
     }
 
     [Test]
-    public async Task GetOne()
+    public async Task GetOneAsync()
     {
-        await TestAchievements(28834908);
+        await TestAchievementsAsync(28834908);
     }
 
     [Test]
-    public async Task GetRhayn()
+    public async Task GetRhaynAsync()
     {
-        await TestAchievements(18188832);
+        await TestAchievementsAsync(18188832);
     }
 
     [Test]
-    public async Task GetTestMax()
+    public async Task GetTestMaxAsync()
     {
-        await TestAchievements(45386124);
+        await TestAchievementsAsync(45386124);
     }
 
-    private static async Task TestAchievements(int id)
+    private static async Task TestAchievementsAsync(int id)
     {
         var client = new XivApiClient();
         var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.Achievements);

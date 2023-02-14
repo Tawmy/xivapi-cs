@@ -6,7 +6,7 @@ namespace xivapi_cs.tests;
 public class FreeCompanyProfileTests
 {
     [Test]
-    public async Task GetUnion()
+    public async Task GetUnionAsync()
     {
         var client = new XivApiClient();
         var result = await client.GetFreeCompanyProfileAsync("9231253336202787185", false);
@@ -14,7 +14,7 @@ public class FreeCompanyProfileTests
     }
 
     [Test]
-    public async Task GetUnionWithMembers()
+    public async Task GetUnionWithMembersAsync()
     {
         var client = new XivApiClient();
         var result = await client.GetFreeCompanyProfileAsync("9231253336202787185", true);

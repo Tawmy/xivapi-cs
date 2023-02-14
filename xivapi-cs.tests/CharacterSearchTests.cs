@@ -7,7 +7,7 @@ namespace xivapi_cs.tests;
 public class CharacterSearchTests
 {
     [Test]
-    public async Task SearchAlyx()
+    public async Task SearchAlyxAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Alyx Bergen", HomeWorld.Phoenix);
@@ -16,7 +16,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchLisa()
+    public async Task SearchLisaAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Lisa Bergen", HomeWorld.Phoenix);
@@ -25,7 +25,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchHalvar()
+    public async Task SearchHalvarAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Halvar Ragnar", HomeWorld.Phoenix);
@@ -34,7 +34,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchGibberish()
+    public async Task SearchGibberishAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("fasklhflaskakshflksaf");
@@ -43,7 +43,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchAlyxWrongServer()
+    public async Task SearchAlyxWrongServerAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Alyx Bergen", HomeWorld.Zodiark);
@@ -51,7 +51,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchAlyxNoServer()
+    public async Task SearchAlyxNoServerAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Alyx Bergen");
@@ -60,7 +60,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchHena()
+    public async Task SearchHenaAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Hena Wilbert", HomeWorld.Phoenix);
@@ -69,7 +69,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchOdin()
+    public async Task SearchOdinAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Odin");
@@ -78,7 +78,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchOdinAndComparePages()
+    public async Task SearchOdinAndComparePagesAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Odin");
@@ -91,7 +91,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchTestMax()
+    public async Task SearchTestMaxAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Testerinus Maximus", HomeWorld.Twintania);
@@ -100,7 +100,7 @@ public class CharacterSearchTests
     }
 
     [Test]
-    public async Task SearchTestMin()
+    public async Task SearchTestMinAsync()
     {
         var client = new XivApiClient();
         var result = await client.SearchCharacterAsync("Testerinus Minimus");

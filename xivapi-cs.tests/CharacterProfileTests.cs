@@ -7,66 +7,66 @@ namespace xivapi_cs.tests;
 public class GetCharacterTests
 {
     [Test]
-    public async Task GetAlyx()
+    public async Task GetAlyxAsync()
     {
-        await TestProfile(28812634);
+        await TestProfileAsync(28812634);
     }
 
     [Test]
-    public async Task GetLisa()
+    public async Task GetLisaAsync()
     {
-        await TestProfile(32691240);
+        await TestProfileAsync(32691240);
     }
 
     [Test]
-    public async Task GetHalvar()
+    public async Task GetHalvarAsync()
     {
-        await TestProfile(28915387);
+        await TestProfileAsync(28915387);
     }
 
     [Test]
-    public async Task GetFuoca()
+    public async Task GetFuocaAsync()
     {
-        await TestProfile(21201379);
+        await TestProfileAsync(21201379);
     }
 
     [Test]
-    public async Task GetHena()
+    public async Task GetHenaAsync()
     {
-        await TestProfile(28835226);
+        await TestProfileAsync(28835226);
     }
 
     [Test]
-    public async Task GetEbih()
+    public async Task GetEbihAsync()
     {
-        await TestProfile(28025341);
+        await TestProfileAsync(28025341);
     }
 
     [Test]
-    public async Task GetGenryu()
+    public async Task GetGenryuAsync()
     {
-        await TestProfile(3435267);
+        await TestProfileAsync(3435267);
     }
 
     [Test]
-    public async Task GetOne()
+    public async Task GetOneAsync()
     {
-        await TestProfile(28834908);
+        await TestProfileAsync(28834908);
     }
 
     [Test]
-    public async Task GetRhayn()
+    public async Task GetRhaynAsync()
     {
-        await TestProfile(18188832);
+        await TestProfileAsync(18188832);
     }
 
     [Test]
-    public async Task GetTestMax()
+    public async Task GetTestMaxAsync()
     {
-        await TestProfile(45386124);
+        await TestProfileAsync(45386124);
     }
 
-    private static async Task TestProfile(int id)
+    private static async Task TestProfileAsync(int id)
     {
         var client = new XivApiClient();
         var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.None);

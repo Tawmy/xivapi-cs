@@ -8,76 +8,76 @@ namespace xivapi_cs.tests;
 public class CharacterProfileExtendedCompleteTests
 {
     [Test]
-    public async Task GetAlyx()
+    public async Task GetAlyxAsync()
     {
-        await TestProfileExtendedComplete(28812634);
+        await TestProfileExtendedCompleteAsync(28812634);
     }
 
     [Test]
-    public async Task GetLisa()
+    public async Task GetLisaAsync()
     {
-        await TestProfileExtendedComplete(32691240);
+        await TestProfileExtendedCompleteAsync(32691240);
     }
 
     [Test]
-    public async Task GetNinfix()
+    public async Task GetNinfixAsync()
     {
-        await TestProfileExtendedComplete(2648055);
+        await TestProfileExtendedCompleteAsync(2648055);
     }
 
     [Test]
-    public async Task GetHalvar()
+    public async Task GetHalvarAsync()
     {
-        await TestProfileExtendedComplete(28915387);
+        await TestProfileExtendedCompleteAsync(28915387);
     }
 
     [Test]
-    public async Task GetFuoca()
+    public async Task GetFuocaAsync()
     {
-        await TestProfileExtendedComplete(21201379);
+        await TestProfileExtendedCompleteAsync(21201379);
     }
 
     [Test]
-    public async Task GetHena()
+    public async Task GetHenaAsync()
     {
-        await TestProfileExtendedComplete(28835226, assertMounts: false);
+        await TestProfileExtendedCompleteAsync(28835226, assertMounts: false);
     }
 
     [Test]
-    public async Task GetEbih()
+    public async Task GetEbihAsync()
     {
-        await TestProfileExtendedComplete(28025341);
+        await TestProfileExtendedCompleteAsync(28025341);
     }
 
     [Test]
-    public async Task GetGenryu()
+    public async Task GetGenryuAsync()
     {
-        await TestProfileExtendedComplete(3435267);
+        await TestProfileExtendedCompleteAsync(3435267);
     }
 
     [Test]
-    public async Task GetOne()
+    public async Task GetOneAsync()
     {
-        await TestProfileExtendedComplete(28834908);
+        await TestProfileExtendedCompleteAsync(28834908);
     }
 
     [Test]
-    public async Task GetRhayn()
+    public async Task GetRhaynAsync()
     {
-        await TestProfileExtendedComplete(18188832);
+        await TestProfileExtendedCompleteAsync(18188832);
     }
 
     [Test]
-    public async Task GetTestMax()
+    public async Task GetTestMaxAsync()
     {
-        var result = await TestProfileExtendedComplete(45386124, false, false);
+        var result = await TestProfileExtendedCompleteAsync(45386124, false, false);
 
         Assert.IsEmpty(result.Minions);
         Assert.IsEmpty(result.Mounts);
     }
 
-    private static async Task<CharacterProfileExtended> TestProfileExtendedComplete(int id, bool assertMinions = true,
-        bool assertMounts = true)
+    private static async Task<CharacterProfileExtended> TestProfileExtendedCompleteAsync(int id,
+        bool assertMinions = true, bool assertMounts = true)
     {
         var client = new XivApiClient();
         var result =

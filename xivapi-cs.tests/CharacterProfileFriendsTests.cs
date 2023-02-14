@@ -7,78 +7,78 @@ namespace xivapi_cs.tests;
 public class CharacterProfileFriendsTests
 {
     [Test]
-    public async Task GetAlyx()
+    public async Task GetAlyxAsync()
     {
-        await TestFriends(28812634);
+        await TestFriendsAsync(28812634);
     }
 
     [Test]
-    public async Task GetLisa()
+    public async Task GetLisaAsync()
     {
-        await TestFriends(32691240);
+        await TestFriendsAsync(32691240);
     }
 
     [Test]
-    public async Task GetNinfix()
+    public async Task GetNinfixAsync()
     {
-        await TestFriends(2648055);
+        await TestFriendsAsync(2648055);
     }
 
     [Test]
-    public async Task GetHalvar()
+    public async Task GetHalvarAsync()
     {
-        await TestFriends(28915387);
+        await TestFriendsAsync(28915387);
     }
 
     [Test]
-    public async Task GetFuoca()
+    public async Task GetFuocaAsync()
     {
-        await TestFriends(21201379);
+        await TestFriendsAsync(21201379);
     }
 
     [Test]
-    public async Task GetHena()
+    public async Task GetHenaAsync()
     {
-        await TestFriends(28835226);
+        await TestFriendsAsync(28835226);
     }
 
     [Test]
-    public async Task GetFizz()
+    public async Task GetFizzAsync()
     {
-        await TestFriends(8696725);
+        await TestFriendsAsync(8696725);
     }
 
     [Test]
-    public async Task GetEbih()
+    public async Task GetEbihAsync()
     {
-        await TestFriends(28025341);
+        await TestFriendsAsync(28025341);
     }
 
     [Test]
-    public async Task GetGenryu()
+    public async Task GetGenryuAsync()
     {
-        await TestFriends(3435267);
+        await TestFriendsAsync(3435267);
     }
 
     [Test]
-    public async Task GetOne()
+    public async Task GetOneAsync()
     {
-        await TestFriends(28834908);
+        await TestFriendsAsync(28834908);
     }
 
     [Test]
-    public async Task GetRhayn()
+    public async Task GetRhaynAsync()
     {
-        await TestFriends(18188832);
+        await TestFriendsAsync(18188832);
     }
 
     [Test]
-    public async Task GetTestMax()
+    public async Task GetTestMaxAsync()
     {
-        await TestFriends(45386124, true);
+        await TestFriendsAsync(45386124, true);
     }
 
-    private static async Task TestFriends(int id, bool mustBeEmpty = false)
+    private static async Task TestFriendsAsync(int id, bool mustBeEmpty = false)
     {
         var client = new XivApiClient();
         var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.Friends);
