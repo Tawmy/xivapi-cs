@@ -69,7 +69,7 @@ public class CharacterProfileMimoTests
     private static async Task TestMimo(int id, bool hasMinions = true, bool hasMounts = true)
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(id, CharacterProfileOptions.MinionsMounts);
+        var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.MinionsMounts);
         Assert.IsNotNull(result);
 
         if (hasMinions)

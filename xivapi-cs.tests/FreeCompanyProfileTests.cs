@@ -9,7 +9,7 @@ public class FreeCompanyProfileTests
     public async Task GetUnion()
     {
         var client = new XivApiClient();
-        var result = await client.FreeCompanyProfile("9231253336202787185", false);
+        var result = await client.GetFreeCompanyProfileAsync("9231253336202787185", false);
         Assert.IsNotNull(result);
     }
 
@@ -17,7 +17,7 @@ public class FreeCompanyProfileTests
     public async Task GetUnionWithMembers()
     {
         var client = new XivApiClient();
-        var result = await client.FreeCompanyProfile("9231253336202787185", true);
+        var result = await client.GetFreeCompanyProfileAsync("9231253336202787185", true);
         Assert.IsNotNull(result);
         Assert.IsNotNull(result.FreeCompanyMembers);
         Assert.Greater(result.FreeCompanyMembers.Length, 0);

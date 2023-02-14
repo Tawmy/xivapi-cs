@@ -9,7 +9,7 @@ public class LinkshellProfileTests
     public async Task GetRegular()
     {
         var client = new XivApiClient();
-        var result = await client.LinkshellProfileRegular("11540474045161933");
+        var result = await client.GetLinkshellProfileRegularAsync("11540474045161933");
         Assert.IsNotNull(result);
     }
 
@@ -17,7 +17,7 @@ public class LinkshellProfileTests
     public async Task GetCrossworld()
     {
         var client = new XivApiClient();
-        var result = await client.LinkshellProfileCrossworld("b2f4cbcae4c10ea9f82b7234c4acf433eca95ba6");
+        var result = await client.GetLinkshellProfileCrossworldAsync("b2f4cbcae4c10ea9f82b7234c4acf433eca95ba6");
         Assert.IsNotNull(result);
     }
 }

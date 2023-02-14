@@ -81,7 +81,7 @@ public class CharacterProfileExtendedCompleteTests
     {
         var client = new XivApiClient();
         var result =
-            await client.CharacterProfileExtended(id,
+            await client.GetCharacterProfileExtendedAsync(id,
                 CharacterProfileOptions.Achievements |
                 CharacterProfileOptions.Friends |
                 CharacterProfileOptions.FreeCompany |

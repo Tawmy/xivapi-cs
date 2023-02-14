@@ -69,7 +69,7 @@ public class GetCharacterTests
     private static async Task TestProfile(int id)
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(id, CharacterProfileOptions.None);
+        var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.None);
         Assert.IsNotNull(result);
     }
 }

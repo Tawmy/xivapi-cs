@@ -75,7 +75,7 @@ public class CharacterProfileFcTests
     private static async Task TestFc(int id, bool hasFc)
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(id, CharacterProfileOptions.FreeCompany);
+        var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.FreeCompany);
         Assert.IsNotNull(result);
 
         if (hasFc)

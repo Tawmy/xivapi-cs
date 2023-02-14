@@ -75,7 +75,7 @@ public class CharacterProfileAchievementsTests
     private static async Task TestAchievements(int id)
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(id, CharacterProfileOptions.Achievements);
+        var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.Achievements);
         Assert.IsNotNull(result);
         if (result.AchievementsPublic)
         {

@@ -81,7 +81,7 @@ public class CharacterProfileFriendsTests
     private static async Task TestFriends(int id, bool mustBeEmpty = false)
     {
         var client = new XivApiClient();
-        var result = await client.CharacterProfile(id, CharacterProfileOptions.Friends);
+        var result = await client.GetCharacterProfileAsync(id, CharacterProfileOptions.Friends);
         Assert.IsNotNull(result);
 
         if (mustBeEmpty)
