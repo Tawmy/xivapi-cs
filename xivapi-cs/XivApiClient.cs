@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Serializers.SystemTextJson;
 using xivapi_cs.Enums;
+using xivapi_cs.Interfaces;
 using xivapi_cs.ViewModels.CharacterProfile;
 using xivapi_cs.ViewModels.CharacterSearch;
 using xivapi_cs.ViewModels.FreeCompanyProfile;
@@ -13,7 +14,7 @@ using xivapi_cs.ViewModels.LinkshellSearch;
 
 namespace xivapi_cs;
 
-public class XivApiClient
+public class XivApiClient : IXivApiClient
 {
     private readonly RestClient _client;
 
@@ -83,7 +84,7 @@ public class XivApiClient
 
     public async Task<CrossworldLinkshellSearch?> SearchLinkshellCrossworldAsync(string name, int page)
     {
-        return await SearchLinkshellCrossworldInternalAsync(name, null);
+        return await SearchLinkshellCrossworldInternalAsync(name, page);
     }
 
     private async Task<CrossworldLinkshellSearch?> SearchLinkshellCrossworldInternalAsync(string name, int? page)
