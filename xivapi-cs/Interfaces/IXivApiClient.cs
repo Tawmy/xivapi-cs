@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using xivapi_cs.Enums;
 using xivapi_cs.ViewModels.CharacterProfile;
@@ -9,6 +10,7 @@ using xivapi_cs.ViewModels.LinkshellSearch;
 
 namespace xivapi_cs.Interfaces;
 
+[SuppressMessage("ReSharper", "InvalidXmlDocComment")] // inheritdoc resharper bug
 public interface IXivApiClient
 {
     /// <summary>
