@@ -6,5 +6,5 @@ internal static class Values
     public static int MinionsTotal => 483;
 
     // https://xivapi.com/search?indexes=Mount&filters=Order%3E=0&limit=1
-    public static int MountsTotal => 272;
+    public static int MountsTotal => 273;
 }
